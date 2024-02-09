@@ -19,8 +19,11 @@ final class SignUpScreenViewController: UIViewController {
     // MARK: - Private Methods
 
     private func initViews() {
+        passwordTextField.isSecureTextEntry = true
         emailTextField.addBottomBorder()
         passwordTextField.addBottomBorder()
+        passwordTextField.addTarget(self, action: #selector(changedTextFields), for: .editingDidEnd)
+        signUpButton.isEnabled = false
     }
 
     // MARK: - Private @IBAction
@@ -33,7 +36,6 @@ final class SignUpScreenViewController: UIViewController {
               let password = passwordTextField.text,
               !password.isEmpty
         else {
-            signUpButton.isEnabled = false
             return
         }
         signUpButton.isEnabled = true

@@ -20,8 +20,9 @@ final class SettingsViewController: UIViewController {
             style: .default
         ) { _ in
             let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-            let checkViewController = storyBoard.instantiateViewController(identifier: "CheckViewController")
-            self.navigationController?.pushViewController(checkViewController, animated: true)
+            let checkViewController = storyBoard.instantiateViewController(withIdentifier: "CheckViewController")
+            checkViewController.modalPresentationStyle = .fullScreen
+            self.present(checkViewController, animated: true)
         }
         let cancelAction = UIAlertAction(
             title: "Отмена",
