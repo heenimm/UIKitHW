@@ -3,44 +3,39 @@
 
 import UIKit
 
-/// SignUpViewController
+/// SignUpViewController на этом экране регистрируется пользователь и после открывается след экран
 final class SignUpScreenViewController: UIViewController {
-    
-    @IBOutlet var loginTF: UITextField!
-
-    @IBOutlet var passwordTF: UITextField!
-
+    @IBOutlet var emailTextField: UITextField!
+    @IBOutlet var passwordTextField: UITextField!
     @IBOutlet var signUpButton: UIButton!
+
+    // MARK: - Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        addSettings()
+        initViews()
     }
 
-    private func addSettings() {
-        loginTF.addTarget(self, action: #selector(changedTextFields), for: .editingChanged)
-        passwordTF.addTarget(self, action: #selector(changedTextFields), for: .editingChanged)
+    // MARK: - Private Methods
 
-        loginTF.addBottomBorder()
-        passwordTF.addBottomBorder()
-        signUpButton.layer.cornerRadius = 10
-        signUpButton.isEnabled = false
+    private func initViews() {
+        emailTextField.addBottomBorder()
+        passwordTextField.addBottomBorder()
     }
 
-    @IBAction func signUpButtonTap(_ sender: UIButton) {}
+    // MARK: - Private @IBAction
 
-    @objc func changedTextFields(_ textField: UITextField) {
-        guard let mail = loginTF.text,
-              !mail.isEmpty,
-              let password = passwordTF.text,
+    @IBAction private func signUpButtonTap(_ sender: UIButton) {}
+
+    @objc private func changedTextFields(_ textField: UITextField) {
+        guard let mail = emailTextField.text,
+              mail.isValidEmail(),
+              let password = passwordTextField.text,
               !password.isEmpty
         else {
             signUpButton.isEnabled = false
             return
         }
         signUpButton.isEnabled = true
-        signUpButton.layer.backgroundColor = UIColor(named: "Active")?.cgColor
     }
-
-    private func addFrame() {}
 }

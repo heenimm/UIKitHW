@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B7361FA2B768E200006E588 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7361F92B768E200006E588 /* UserModel.swift */; };
+		7B7361FD2B768FBA0006E588 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7361FC2B768FBA0006E588 /* String+Extension.swift */; };
+		7B7361FF2B76C3410006E588 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7361FE2B76C3410006E588 /* SettingsModel.swift */; };
 		7B9A02422B7604B000DE2FCF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9A02412B7604B000DE2FCF /* AppDelegate.swift */; };
 		7B9A02442B7604B000DE2FCF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9A02432B7604B000DE2FCF /* SceneDelegate.swift */; };
 		7B9A02462B7604B000DE2FCF /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9A02452B7604B000DE2FCF /* SignUpViewController.swift */; };
@@ -19,7 +22,7 @@
 		7B9A02682B7604B200DE2FCF /* UIKitHWUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9A02672B7604B200DE2FCF /* UIKitHWUITestsLaunchTests.swift */; };
 		7B9A02812B76250E00DE2FCF /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9A02802B76250E00DE2FCF /* SettingsViewController.swift */; };
 		7B9A02832B76255C00DE2FCF /* CheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9A02822B76255C00DE2FCF /* CheckViewController.swift */; };
-		7B9A02892B763EA000DE2FCF /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9A02882B763EA000DE2FCF /* Extension.swift */; };
+		7B9A02892B763EA000DE2FCF /* TextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9A02882B763EA000DE2FCF /* TextField+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7B7361F92B768E200006E588 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		7B7361FC2B768FBA0006E588 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		7B7361FE2B76C3410006E588 /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
 		7B9A023E2B7604B000DE2FCF /* UIKitHW.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitHW.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B9A02412B7604B000DE2FCF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7B9A02432B7604B000DE2FCF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,7 +62,7 @@
 		7B9A02672B7604B200DE2FCF /* UIKitHWUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitHWUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		7B9A02802B76250E00DE2FCF /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		7B9A02822B76255C00DE2FCF /* CheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckViewController.swift; sourceTree = "<group>"; };
-		7B9A02882B763EA000DE2FCF /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		7B9A02882B763EA000DE2FCF /* TextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextField+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +90,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7B7361FB2B768FA50006E588 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				7B9A02882B763EA000DE2FCF /* TextField+Extension.swift */,
+				7B7361FC2B768FBA0006E588 /* String+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		7B9A02352B7604B000DE2FCF = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +122,7 @@
 		7B9A02402B7604B000DE2FCF /* UIKitHW */ = {
 			isa = PBXGroup;
 			children = (
+				7B7361FB2B768FA50006E588 /* Extension */,
 				7B9A02872B7627B400DE2FCF /* Supporting */,
 				7B9A02862B76277D00DE2FCF /* SignUpMVC */,
 				7B9A02852B76256B00DE2FCF /* SettingsMVC */,
@@ -115,7 +131,6 @@
 				7B9A024D2B7604B100DE2FCF /* Assets.xcassets */,
 				7B9A02522B7604B100DE2FCF /* Info.plist */,
 				7B9A024A2B7604B000DE2FCF /* UIKitHW.xcdatamodeld */,
-				7B9A02882B763EA000DE2FCF /* Extension.swift */,
 			);
 			path = UIKitHW;
 			sourceTree = "<group>";
@@ -149,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				7B9A02802B76250E00DE2FCF /* SettingsViewController.swift */,
+				7B7361FE2B76C3410006E588 /* SettingsModel.swift */,
 			);
 			path = SettingsMVC;
 			sourceTree = "<group>";
@@ -157,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				7B9A02452B7604B000DE2FCF /* SignUpViewController.swift */,
+				7B7361F92B768E200006E588 /* UserModel.swift */,
 			);
 			path = SignUpMVC;
 			sourceTree = "<group>";
@@ -348,9 +365,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B9A02462B7604B000DE2FCF /* SignUpViewController.swift in Sources */,
+				7B7361FD2B768FBA0006E588 /* String+Extension.swift in Sources */,
 				7B9A024C2B7604B000DE2FCF /* UIKitHW.xcdatamodeld in Sources */,
-				7B9A02892B763EA000DE2FCF /* Extension.swift in Sources */,
+				7B7361FA2B768E200006E588 /* UserModel.swift in Sources */,
+				7B9A02892B763EA000DE2FCF /* TextField+Extension.swift in Sources */,
 				7B9A02422B7604B000DE2FCF /* AppDelegate.swift in Sources */,
+				7B7361FF2B76C3410006E588 /* SettingsModel.swift in Sources */,
 				7B9A02832B76255C00DE2FCF /* CheckViewController.swift in Sources */,
 				7B9A02812B76250E00DE2FCF /* SettingsViewController.swift in Sources */,
 				7B9A02442B7604B000DE2FCF /* SceneDelegate.swift in Sources */,
