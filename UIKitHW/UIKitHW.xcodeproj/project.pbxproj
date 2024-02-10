@@ -87,8 +87,20 @@
 			children = (
 				7B9A02452B7604B000DE2FCF /* АnagramViewController.swift */,
 				7B9A027E2B76138200DE2FCF /* Model.swift */,
+				7B9A027C2B76128000DE2FCF /* InformationView.swift */,
 			);
 			path = AnagramMVC;
+			sourceTree = "<group>";
+		};
+		7B7362032B7740CA0006E588 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7B9A02412B7604B000DE2FCF /* AppDelegate.swift */,
+				7B9A02432B7604B000DE2FCF /* SceneDelegate.swift */,
+				7B9A02472B7604B000DE2FCF /* Main.storyboard */,
+				7B9A024F2B7604B100DE2FCF /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		7B9A02352B7604B000DE2FCF = {
@@ -115,14 +127,10 @@
 			isa = PBXGroup;
 			children = (
 				7B7362022B7738250006E588 /* AnagramMVC */,
-				7B9A02412B7604B000DE2FCF /* AppDelegate.swift */,
-				7B9A02432B7604B000DE2FCF /* SceneDelegate.swift */,
-				7B9A02472B7604B000DE2FCF /* Main.storyboard */,
+				7B7362032B7740CA0006E588 /* Supporting Files */,
 				7B9A024D2B7604B100DE2FCF /* Assets.xcassets */,
-				7B9A024F2B7604B100DE2FCF /* LaunchScreen.storyboard */,
 				7B9A02522B7604B100DE2FCF /* Info.plist */,
 				7B9A024A2B7604B000DE2FCF /* UIKitHW.xcdatamodeld */,
-				7B9A027C2B76128000DE2FCF /* InformationView.swift */,
 			);
 			path = UIKitHW;
 			sourceTree = "<group>";

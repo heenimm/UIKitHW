@@ -8,43 +8,7 @@ final class АnagramViewController: UIViewController {
     // MARK: - Private Properties
 
     private let word = WordModel()
-
-    private let inputLabel: UILabel = {
-        let label = UILabel(frame: CGRect(x: 50, y: 100, width: 275, height: 57))
-        label.text = "Вы ввели слово"
-        label.font = UIFont(name: "Verdana-Bold", size: 15)
-        label.textAlignment = .center
-        label.isHidden = true
-        return label
-    }()
-
-    private let wordLabel: UILabel = {
-        let label = UILabel(frame: CGRect(x: 50, y: 150, width: 275, height: 57))
-        label.textAlignment = .center
-        label.textColor = .gray
-        label.font = .italicSystemFont(ofSize: 15)
-        label.isHidden = true
-        return label
-    }()
-
-    private let descriptionLabel: UILabel = {
-        let label = UILabel(frame: CGRect(x: 60, y: 250, width: 275, height: 57))
-        label.text = "А вот что получится, если читать справа налево"
-        label.numberOfLines = 0
-        label.textAlignment = .center
-        label.font = UIFont(name: "Verdana-Bold", size: 15)
-        label.isHidden = true
-        return label
-    }()
-
-    private let wordReverseLabel: UILabel = {
-        let label = UILabel(frame: CGRect(x: 50, y: 300, width: 275, height: 57))
-        label.textAlignment = .center
-        label.textColor = .gray
-        label.font = .italicSystemFont(ofSize: 15)
-        label.isHidden = true
-        return label
-    }()
+    private let informationView = InformationView()
 
     private lazy var beginButton: UIButton = {
         let button = UIButton(frame: CGRect(x: 30, y: 400, width: 335, height: 44))
@@ -67,11 +31,9 @@ final class АnagramViewController: UIViewController {
     // MARK: - Private Methods
 
     private func addSubviews() {
-        view.addSubview(inputLabel)
-        view.addSubview(wordLabel)
-        view.addSubview(descriptionLabel)
-        view.addSubview(wordReverseLabel)
         view.addSubview(beginButton)
+        view.addSubview(informationView)
+        informationView.isHidden = true
     }
 
     @objc private func alertAction() {
@@ -89,22 +51,27 @@ final class АnagramViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
 
+    // MARK: - Life Cycle
+
     private func initViews(word: String) {
-        wordReverseLabel.text = self.word.getWord(word: word).capitalized
-        wordLabel.text = word
-        inputLabel.isHidden = false
-        wordLabel.isHidden = false
-        descriptionLabel.isHidden = false
-        wordReverseLabel.isHidden = false
+        informationView.wordReverseLabel.text = self.word.getWord(word: word).capitalized
+        informationView.wordLabel.text = word
+        informationView.inputLabel.isHidden = false
+        informationView.wordLabel.isHidden = false
+        informationView.descriptionLabel.isHidden = false
+        informationView.wordReverseLabel.isHidden = false
+        informationView.isHidden = false
         beginButton.frame.origin.y = 600
     }
 }
+
+// MARK: - Extension
 
 extension АnagramViewController {
     func makeAlert(title: String, message: String, textFields: [UITextField]) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         for _ in textFields {
-            alert.addTextField { textFields in
+            alert.addTextField { _ in
             }
         }
         let okAction = UIAlertAction(title: "Ок", style: .default)
