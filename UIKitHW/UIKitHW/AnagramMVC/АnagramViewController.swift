@@ -3,13 +3,12 @@
 
 import UIKit
 
-///АnagramViewController - данный класс переворачивает слово введенное в алерт и выводит его наоборот
+/// АnagramViewController - данный класс переворачивает слово введенное в алерт и выводит его наоборот
 final class АnagramViewController: UIViewController {
-    
     // MARK: - Private Properties
-    
+
     private let word = WordModel()
-    
+
     private let inputLabel: UILabel = {
         let label = UILabel(frame: CGRect(x: 50, y: 100, width: 275, height: 57))
         label.text = "Вы ввели слово"
@@ -18,7 +17,7 @@ final class АnagramViewController: UIViewController {
         label.isHidden = true
         return label
     }()
-    
+
     private let wordLabel: UILabel = {
         let label = UILabel(frame: CGRect(x: 50, y: 150, width: 275, height: 57))
         label.textAlignment = .center
@@ -27,7 +26,7 @@ final class АnagramViewController: UIViewController {
         label.isHidden = true
         return label
     }()
-    
+
     private let descriptionLabel: UILabel = {
         let label = UILabel(frame: CGRect(x: 60, y: 250, width: 275, height: 57))
         label.text = "А вот что получится, если читать справа налево"
@@ -37,7 +36,7 @@ final class АnagramViewController: UIViewController {
         label.isHidden = true
         return label
     }()
-    
+
     private let wordReverseLabel: UILabel = {
         let label = UILabel(frame: CGRect(x: 50, y: 300, width: 275, height: 57))
         label.textAlignment = .center
@@ -46,7 +45,7 @@ final class АnagramViewController: UIViewController {
         label.isHidden = true
         return label
     }()
-    
+
     private lazy var beginButton: UIButton = {
         let button = UIButton(frame: CGRect(x: 30, y: 400, width: 335, height: 44))
         button.backgroundColor = UIColor(red: 76 / 255, green: 216 / 255, blue: 102 / 255, alpha: 1)
@@ -56,37 +55,25 @@ final class АnagramViewController: UIViewController {
         button.addTarget(self, action: #selector(alertAction), for: .allEvents)
         return button
     }()
-    
-    private lazy var beginButtonDown: UIButton = {
-        let button = UIButton(frame: CGRect(x: 30, y: 600, width: 335, height: 44))
-        button.backgroundColor = UIColor(red: 76 / 255, green: 216 / 255, blue: 102 / 255, alpha: 1)
-        button.layer.cornerRadius = 12
-        button.setTitle("Начать", for: .normal)
-        button.tintColor = .white
-        button.addTarget(self, action: #selector(alertAction), for: .allEvents)
-        button.isHidden = true
-        return button
-    }()
-    
+
     // MARK: - Life Cycle
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         addSubviews()
     }
-    
+
     // MARK: - Private Methods
-    
+
     private func addSubviews() {
         view.addSubview(inputLabel)
         view.addSubview(wordLabel)
         view.addSubview(descriptionLabel)
         view.addSubview(wordReverseLabel)
         view.addSubview(beginButton)
-        view.addSubview(beginButtonDown)
     }
-    
+
     @objc private func alertAction() {
         let alert = UIAlertController(title: "Введите ваше слово", message: nil, preferredStyle: .alert)
         let action = UIAlertAction(title: "Ок", style: .default) { _ in
@@ -101,7 +88,7 @@ final class АnagramViewController: UIViewController {
         alert.addAction(cancel)
         present(alert, animated: true, completion: nil)
     }
-    
+
     private func initViews(word: String) {
         wordReverseLabel.text = self.word.getWord(word: word).capitalized
         wordLabel.text = word
@@ -109,16 +96,15 @@ final class АnagramViewController: UIViewController {
         wordLabel.isHidden = false
         descriptionLabel.isHidden = false
         wordReverseLabel.isHidden = false
-        beginButton.isHidden = true
-        beginButtonDown.isHidden = false
+        beginButton.frame.origin.y = 600
     }
 }
 
 extension АnagramViewController {
-    func makeAlert(title: String, message: String, textFields: [(UITextField)]) {
+    func makeAlert(title: String, message: String, textFields: [UITextField]) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         for _ in textFields {
-            alert.addTextField { (textFields) in
+            alert.addTextField { textFields in
             }
         }
         let okAction = UIAlertAction(title: "Ок", style: .default)
