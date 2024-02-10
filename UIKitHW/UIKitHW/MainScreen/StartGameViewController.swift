@@ -2,7 +2,7 @@
 // Copyright © RoadMap. All rights reserved.
 
 import UIKit
-
+///StartGameViewController стартовое окно приложение отображает две кнопки для начала диалога
 class StartGameViewController: UIViewController {
     // MARK: - Types
 
