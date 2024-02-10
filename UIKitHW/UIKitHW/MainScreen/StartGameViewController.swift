@@ -155,9 +155,9 @@ class StartGameViewController: UIViewController {
 //                    self.makeAlert("Попробуй еще раз", "Вы ввели слишком большое число", .alert)
 //                }
                 if number == self.randomNumber {
-                    self.makeAlert("Поздравляем", "Вы угадали", .alert)
+                    self.makeAlert("Поздравляем", "Вы угадали")
                 } else {
-                    self.makeAlert("Упс", "Это неверный ответ", .alert)
+                    self.makeAlert("Упс", "Это неверный ответ")
                 }
             }
         }
@@ -174,7 +174,6 @@ class StartGameViewController: UIViewController {
     private func makeAlert(
         _ title: String,
         _ message: String,
-        _ style: UIAlertController.Style
     ) {
         let alertController = UIAlertController(
             title: title,
