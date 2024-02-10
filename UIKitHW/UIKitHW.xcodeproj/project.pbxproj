@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B7362052B7770BD0006E588 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7362042B7770BD0006E588 /* UIView+Extension.swift */; };
 		7B9A02422B7604B000DE2FCF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9A02412B7604B000DE2FCF /* AppDelegate.swift */; };
 		7B9A02442B7604B000DE2FCF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9A02432B7604B000DE2FCF /* SceneDelegate.swift */; };
 		7B9A02462B7604B000DE2FCF /* АnagramViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9A02452B7604B000DE2FCF /* АnagramViewController.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7B7362042B7770BD0006E588 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		7B9A023E2B7604B000DE2FCF /* UIKitHW.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitHW.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B9A02412B7604B000DE2FCF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7B9A02432B7604B000DE2FCF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				7B9A024D2B7604B100DE2FCF /* Assets.xcassets */,
 				7B9A02522B7604B100DE2FCF /* Info.plist */,
 				7B9A024A2B7604B000DE2FCF /* UIKitHW.xcdatamodeld */,
+				7B7362042B7770BD0006E588 /* UIView+Extension.swift */,
 			);
 			path = UIKitHW;
 			sourceTree = "<group>";
@@ -329,6 +332,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B9A027D2B76128000DE2FCF /* InformationView.swift in Sources */,
+				7B7362052B7770BD0006E588 /* UIView+Extension.swift in Sources */,
 				7B9A02462B7604B000DE2FCF /* АnagramViewController.swift in Sources */,
 				7B9A024C2B7604B000DE2FCF /* UIKitHW.xcdatamodeld in Sources */,
 				7B9A027F2B76138200DE2FCF /* Model.swift in Sources */,

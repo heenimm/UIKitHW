@@ -31,8 +31,7 @@ final class АnagramViewController: UIViewController {
     // MARK: - Private Methods
 
     private func addSubviews() {
-        view.addSubview(beginButton)
-        view.addSubview(informationView)
+        view.addSubviews(beginButton, informationView)
         informationView.isHidden = true
     }
 

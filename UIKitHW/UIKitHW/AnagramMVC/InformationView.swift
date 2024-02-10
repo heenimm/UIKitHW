@@ -6,7 +6,6 @@ import UIKit
 
 /// Данное вью отображается при нажатии на кнопку которая переворачивает слово на главном экране
 class InformationView: UIView {
-    
     // MARK: - Private Properties
 
     let inputLabel: UILabel = {
@@ -54,9 +53,6 @@ class InformationView: UIView {
     // MARK: - Private Methods
 
     private func addSubviews() {
-        addSubview(inputLabel)
-        addSubview(wordLabel)
-        addSubview(descriptionLabel)
-        addSubview(wordReverseLabel)
+        addSubviews(inputLabel, wordLabel, descriptionLabel, wordReverseLabel)
     }
 }
