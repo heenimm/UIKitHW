@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Zfy-e9-BMd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gNs-dh-6xN">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -20,13 +20,13 @@
                                 <rect key="frame" x="19.5" y="386" width="354" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" textContentType="email"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите пароль" textAlignment="natural" minimumFontSize="17" disabledBackground="eye.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="dHs-QP-l35">
                                 <rect key="frame" x="19.5" y="452" width="354" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" textContentType="name"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xun-4k-Hys">
                                 <rect key="frame" x="18" y="672" width="354" height="31"/>
@@ -97,12 +97,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2271" y="65"/>
+            <point key="canvasLocation" x="3200" y="64.691943127962077"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="csS-C1-g2y">
             <objects>
-                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="Tsw-tp-YiV" customClass="SettingsViewController" customModule="UIKitHW" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="Tsw-tp-YiV" customClass="SettingsViewController" customModule="UIKitHW" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eVV-9G-d8i">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -208,12 +208,12 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="di8-Le-yIC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="epx-bT-08d" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3025" y="65"/>
+            <point key="canvasLocation" x="3953.8461538461538" y="64.691943127962077"/>
         </scene>
         <!--Check View Controller-->
         <scene sceneID="QZs-7l-Uur">
             <objects>
-                <viewController storyboardIdentifier="CheckViewController" id="p3B-nD-Fu3" customClass="CheckViewController" customModule="UIKitHW" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CheckViewController" modalPresentationStyle="fullScreen" id="p3B-nD-Fu3" customClass="CheckViewController" customModule="UIKitHW" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CJy-eG-Ead">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -303,7 +303,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kV4-Hm-Ccd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3778.4615384615381" y="65.402843601895725"/>
+            <point key="canvasLocation" x="4707.6923076923076" y="65.402843601895725"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Njf-ka-ouZ">
@@ -319,29 +319,28 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uml-88-DD2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4461.538461538461" y="71.800947867298575"/>
+            <point key="canvasLocation" x="5389.2307692307686" y="71.800947867298575"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="5iM-UK-slG">
+        <scene sceneID="dJN-IR-gif">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="Zfy-e9-BMd" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gNs-dh-6xN" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="f0v-vx-DMK">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aYi-7N-tJb">
                         <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
-                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="eDO-B4-sc5">
-                        <rect key="frame" x="0.0" y="761" width="390" height="49"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="G7j-rT-wHO">
                         <autoresizingMask key="autoresizingMask"/>
                     </toolbar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="aXN-DK-GKg"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="8rf-hC-Nz4"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tHA-O7-xnY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PJI-4O-ryx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1260" y="65"/>
+            <point key="canvasLocation" x="2425" y="65"/>
         </scene>
     </scenes>
     <resources>

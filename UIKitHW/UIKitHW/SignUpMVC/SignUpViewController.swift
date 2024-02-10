@@ -23,6 +23,7 @@ final class SignUpScreenViewController: UIViewController {
         emailTextField.addBottomBorder()
         passwordTextField.addBottomBorder()
         passwordTextField.addTarget(self, action: #selector(changedTextFields), for: .editingDidEnd)
+        emailTextField.addTarget(self, action: #selector(changedTextFields), for: .editingDidEnd)
         signUpButton.isEnabled = false
     }
 
@@ -39,5 +40,15 @@ final class SignUpScreenViewController: UIViewController {
             return
         }
         signUpButton.isEnabled = true
+    }
+}
+
+extension SignUpScreenViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        if textField == emailTextField {
+            passwordTextField.becomeFirstResponder()
+            signUpButton.isEnabled = true
+        }
+        return true
     }
 }
