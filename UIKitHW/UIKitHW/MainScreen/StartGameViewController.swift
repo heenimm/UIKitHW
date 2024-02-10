@@ -2,7 +2,8 @@
 // Copyright © RoadMap. All rights reserved.
 
 import UIKit
-///StartGameViewController стартовое окно приложение отображает две кнопки для начала диалога
+
+/// StartGameViewController стартовое окно приложение отображает две кнопки для начала диалога
 class StartGameViewController: UIViewController {
     // MARK: - Types
 
@@ -173,7 +174,7 @@ class StartGameViewController: UIViewController {
 
     private func makeAlert(
         _ title: String,
-        _ message: String,
+        _ message: String
     ) {
         let alertController = UIAlertController(
             title: title,
