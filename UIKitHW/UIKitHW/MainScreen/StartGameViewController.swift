@@ -3,7 +3,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class StartGameViewController: UIViewController {
     // MARK: - Types
 
     let randomNumber = Int.random(in: 1 ... 10)
