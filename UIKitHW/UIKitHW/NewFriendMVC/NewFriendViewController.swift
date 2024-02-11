@@ -3,18 +3,48 @@
 
 import UIKit
 
-///
+/// NewFriendViewController - данное окно имеет несколько полей с дейтпикерами для задания им значений
 final class NewFriendViewController: UIViewController {
+    // MARK: - Private Properties
+
+    private lazy var userPhotoImageView: UIImageView = {
+        let imageView = UIImageView(frame: CGRect(
+            x: view.frame.width / 2 - 65,
+            y: 66,
+            width: 125,
+            height: 125
+        ))
+        imageView.image = UIImage(systemName: "person.crop.circle.fill")?
+            .withTintColor(.lightGray, renderingMode: .alwaysOriginal)
+        return imageView
+    }()
+
+    private lazy var userInfoView: UserInfoView = {
+        let userInfoView = UserInfoView(frame: CGRect(
+            x: 20,
+            y: 300,
+            width: view.frame.width,
+            height: view.frame.height - 300
+        ))
+        return userInfoView
+    }()
+
+    // MARK: - Life Cycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
-//        configureNavigationItem()
-        navigationItem.title = "fggggg"
-        view.backgroundColor = .white
+        configureNavigationItem()
+        setupSubviews()
     }
 
-    // MARK: -
+    // MARK: - Private Methods
 
-    private func configureNavigationItemNewF() {
+    private func setupSubviews() {
+        view.backgroundColor = .white
+        view.addSubviews(userPhotoImageView, userInfoView)
+    }
+
+    private func configureNavigationItem() {
         let rightBarButton = UIBarButtonItem(
             title: "Add",
             style: .plain,

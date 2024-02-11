@@ -3,7 +3,8 @@
 
 import UIKit
 
-class BirthdayCardView: UIView {
+/// BirthdayCardView - вью отображает список друзей и их дни рождения
+final class BirthdayCardView: UIView {
     // MARK: - Private Properties
 
     lazy var userIconImageView: UIImageView = {
@@ -76,9 +77,5 @@ class BirthdayCardView: UIView {
     private func setupSubviews() {
         backgroundColor = .white
         addSubviews(userIconImageView, birthdayIconImageView, nameLabel, birthdayLabel, daysToDateLabel)
-    }
-
-    @objc private func openBirthdayListScreen() {
-//        navigationController?.pushViewController(BirthdayListViewController(), animated: true)
     }
 }

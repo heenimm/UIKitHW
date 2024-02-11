@@ -3,22 +3,35 @@
 
 import UIKit
 
-///
+/// BirthdayListViewController - вью контроллер отображает список друзей и позволяет перейти на экран добавления новых
+/// данных по нажатию на плюсик
 final class BirthdayListViewController: UIViewController {
     // MARK: - Private Properties
 
     private var cards: [CardModel] = [
-        CardModel(icon: "firstIcon", name: "Helena Link", date: "10.03 - turns 25!", days: "birthday"),
-        CardModel(icon: "secondIcon", name: "Verona Tusk", date: "20.03 - turns 39", days: "10 days"),
-        CardModel(icon: "thirdIcon", name: "Alex Smith", date: "21.04 - turns 51", days: "42 days"),
-        CardModel(icon: "lastIcon", name: "Tom Johnson", date: "05.06 - turns 18", days: "87 days")
+        CardModel(
+            icon: "firstIcon", name: "Helena Link", date: "10.03 - turns 25!", days: "birthday"
+        ),
+        CardModel(
+            icon: "secondIcon", name: "Verona Tusk", date: "20.03 - turns 39", days: "10 days"
+        ),
+        CardModel(
+            icon: "thirdIcon", name: "Alex Smith", date: "21.04 - turns 51", days: "42 days"
+        ),
+        CardModel(
+            icon: "lastIcon", name: "Tom Johnson", date: "05.06 - turns 18", days: "87 days"
+        )
     ]
+
+    // MARK: - Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
         configureNavigationItem()
         initSubviews()
     }
+
+    // MARK: - Private Methods
 
     private func configureNavigationItem() {
         navigationItem.title = "Birthday Reminder"
@@ -53,6 +66,8 @@ final class BirthdayListViewController: UIViewController {
     }
 
     @objc private func addNewItem() {
-        present(NewFriendViewController(), animated: true)
+        let modalViewController = NewFriendViewController()
+        let navigationController = UINavigationController(rootViewController: modalViewController)
+        present(navigationController, animated: true)
     }
 }

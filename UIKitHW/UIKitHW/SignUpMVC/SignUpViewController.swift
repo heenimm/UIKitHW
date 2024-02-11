@@ -58,6 +58,18 @@ final class SignUpViewController: UIViewController {
         return label
     }()
 
+    private lazy var emailTextField: UITextField = {
+        let textField = UITextField(frame: CGRect(
+            x: 20,
+            y: 350,
+            width: 335,
+            height: 40
+        ))
+
+        textField.placeholder = "e-mail"
+        return textField
+    }()
+
     private lazy var passwordLabel: UILabel = {
         let label = UILabel(frame: CGRect(
             x: 20,
@@ -69,6 +81,18 @@ final class SignUpViewController: UIViewController {
         label.textColor = .purple
         label.font = UIFont(name: "Verdana-Bold", size: 16)
         return label
+    }()
+
+    private lazy var passwordTextField: UITextField = {
+        let textField = UITextField(frame: CGRect(
+            x: 20,
+            y: 433,
+            width: 335,
+            height: 40
+        ))
+
+        textField.placeholder = "password"
+        return textField
     }()
 
     private lazy var faceIdLabel: UILabel = {
@@ -91,7 +115,6 @@ final class SignUpViewController: UIViewController {
             width: view.frame.width - 40,
             height: 44
         ))
-
         button.titleLabel?.textColor = .white
         button.titleLabel?.text = "Use FaceID"
         button.backgroundColor = UIColor(named: "AppRed")
@@ -99,6 +122,17 @@ final class SignUpViewController: UIViewController {
         button.titleLabel?.font = UIFont(name: "Verdana-Bold", size: 16)
         button.addTarget(self, action: #selector(openBirthdayListScreen), for: .touchUpInside)
         return button
+    }()
+
+    private lazy var switcher: UISwitch = {
+        let switcher = UISwitch(frame: CGRect(
+            x: 220,
+            y: 550,
+            width: 100,
+            height: 50
+        ))
+        switcher.isOn = true
+        return switcher
     }()
 
     // MARK: - Life Cycle
@@ -112,13 +146,9 @@ final class SignUpViewController: UIViewController {
 
     private func setupSubviews() {
         view.backgroundColor = .white
-        view.addSubview(iconImageView)
-        view.addSubview(appNameLabel)
-        view.addSubview(signInLabel)
-        view.addSubview(emailLabel)
-        view.addSubview(passwordLabel)
-        view.addSubview(faceIdLabel)
-        view.addSubview(signInButton)
+        view.addSubviews(iconImageView, appNameLabel, signInLabel)
+        view.addSubviews(emailLabel, emailTextField, passwordLabel, passwordTextField)
+        view.addSubviews(faceIdLabel, switcher, signInButton)
     }
 
     @objc private func openBirthdayListScreen() {
