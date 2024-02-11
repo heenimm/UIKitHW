@@ -12,7 +12,7 @@ final class АnagramViewController: UIViewController {
 
     private lazy var beginButton: UIButton = {
         let button = UIButton(frame: CGRect(x: 30, y: 400, width: 335, height: 44))
-        button.backgroundColor = UIColor(red: 76 / 255, green: 216 / 255, blue: 102 / 255, alpha: 1)
+        button.backgroundColor = UIColor(named: "AppGreen")
         button.layer.cornerRadius = 12
         button.setTitle("Начать", for: .normal)
         button.tintColor = .white
