@@ -5,7 +5,7 @@ import Foundation
 import UIKit
 
 /// Данное вью отображается при нажатии на кнопку которая переворачивает слово на главном экране
-class InformationView: UIView {
+final class InformationView: UIView {
     // MARK: - Private Properties
 
     let inputLabel: UILabel = {
