@@ -7,9 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B7362092B787C1F0006E588 /* BirthdayListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7362082B787C1F0006E588 /* BirthdayListViewController.swift */; };
+		7B73620C2B7880D40006E588 /* BirthdayCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B73620B2B7880D40006E588 /* BirthdayCardView.swift */; };
+		7B73620E2B78843E0006E588 /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B73620D2B78843E0006E588 /* CardModel.swift */; };
+		7B7362102B78904F0006E588 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B73620F2B78904F0006E588 /* UIView+Extension.swift */; };
+		7B7362132B7897360006E588 /* NewFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7362122B7897360006E588 /* NewFriendViewController.swift */; };
+		7B7362152B78976F0006E588 /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7362142B78976F0006E588 /* SignUpModel.swift */; };
 		7B9A02422B7604B000DE2FCF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9A02412B7604B000DE2FCF /* AppDelegate.swift */; };
 		7B9A02442B7604B000DE2FCF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9A02432B7604B000DE2FCF /* SceneDelegate.swift */; };
-		7B9A02462B7604B000DE2FCF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9A02452B7604B000DE2FCF /* ViewController.swift */; };
+		7B9A02462B7604B000DE2FCF /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9A02452B7604B000DE2FCF /* SignUpViewController.swift */; };
 		7B9A02492B7604B000DE2FCF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B9A02472B7604B000DE2FCF /* Main.storyboard */; };
 		7B9A024C2B7604B000DE2FCF /* UIKitHW.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7B9A024A2B7604B000DE2FCF /* UIKitHW.xcdatamodeld */; };
 		7B9A024E2B7604B100DE2FCF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B9A024D2B7604B100DE2FCF /* Assets.xcassets */; };
@@ -37,10 +43,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7B7362082B787C1F0006E588 /* BirthdayListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayListViewController.swift; sourceTree = "<group>"; };
+		7B73620B2B7880D40006E588 /* BirthdayCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayCardView.swift; sourceTree = "<group>"; };
+		7B73620D2B78843E0006E588 /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
+		7B73620F2B78904F0006E588 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		7B7362122B7897360006E588 /* NewFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFriendViewController.swift; sourceTree = "<group>"; };
+		7B7362142B78976F0006E588 /* SignUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
 		7B9A023E2B7604B000DE2FCF /* UIKitHW.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitHW.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B9A02412B7604B000DE2FCF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7B9A02432B7604B000DE2FCF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7B9A02452B7604B000DE2FCF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7B9A02452B7604B000DE2FCF /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		7B9A02482B7604B000DE2FCF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7B9A024B2B7604B000DE2FCF /* UIKitHW.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UIKitHW.xcdatamodel; sourceTree = "<group>"; };
 		7B9A024D2B7604B100DE2FCF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -78,6 +90,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7B7362062B7778170006E588 /* SignUpMVC */ = {
+			isa = PBXGroup;
+			children = (
+				7B9A02452B7604B000DE2FCF /* SignUpViewController.swift */,
+				7B7362142B78976F0006E588 /* SignUpModel.swift */,
+			);
+			path = SignUpMVC;
+			sourceTree = "<group>";
+		};
+		7B7362072B787BC50006E588 /* BirthdayListMVC */ = {
+			isa = PBXGroup;
+			children = (
+				7B7362082B787C1F0006E588 /* BirthdayListViewController.swift */,
+				7B73620B2B7880D40006E588 /* BirthdayCardView.swift */,
+				7B73620D2B78843E0006E588 /* CardModel.swift */,
+			);
+			path = BirthdayListMVC;
+			sourceTree = "<group>";
+		};
+		7B73620A2B787DB60006E588 /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				7B9A02432B7604B000DE2FCF /* SceneDelegate.swift */,
+				7B9A024F2B7604B100DE2FCF /* LaunchScreen.storyboard */,
+				7B9A02412B7604B000DE2FCF /* AppDelegate.swift */,
+			);
+			path = "Supporting files";
+			sourceTree = "<group>";
+		};
+		7B7362112B7896910006E588 /* NewFriendMVC */ = {
+			isa = PBXGroup;
+			children = (
+				7B7362122B7897360006E588 /* NewFriendViewController.swift */,
+			);
+			path = NewFriendMVC;
+			sourceTree = "<group>";
+		};
 		7B9A02352B7604B000DE2FCF = {
 			isa = PBXGroup;
 			children = (
@@ -101,14 +150,15 @@
 		7B9A02402B7604B000DE2FCF /* UIKitHW */ = {
 			isa = PBXGroup;
 			children = (
-				7B9A02412B7604B000DE2FCF /* AppDelegate.swift */,
-				7B9A02432B7604B000DE2FCF /* SceneDelegate.swift */,
-				7B9A02452B7604B000DE2FCF /* ViewController.swift */,
+				7B7362112B7896910006E588 /* NewFriendMVC */,
+				7B73620A2B787DB60006E588 /* Supporting files */,
+				7B7362072B787BC50006E588 /* BirthdayListMVC */,
+				7B7362062B7778170006E588 /* SignUpMVC */,
 				7B9A02472B7604B000DE2FCF /* Main.storyboard */,
 				7B9A024D2B7604B100DE2FCF /* Assets.xcassets */,
-				7B9A024F2B7604B100DE2FCF /* LaunchScreen.storyboard */,
 				7B9A02522B7604B100DE2FCF /* Info.plist */,
 				7B9A024A2B7604B000DE2FCF /* UIKitHW.xcdatamodeld */,
+				7B73620F2B78904F0006E588 /* UIView+Extension.swift */,
 			);
 			path = UIKitHW;
 			sourceTree = "<group>";
@@ -306,9 +356,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B9A02462B7604B000DE2FCF /* ViewController.swift in Sources */,
+				7B9A02462B7604B000DE2FCF /* SignUpViewController.swift in Sources */,
+				7B7362132B7897360006E588 /* NewFriendViewController.swift in Sources */,
 				7B9A024C2B7604B000DE2FCF /* UIKitHW.xcdatamodeld in Sources */,
+				7B7362102B78904F0006E588 /* UIView+Extension.swift in Sources */,
 				7B9A02422B7604B000DE2FCF /* AppDelegate.swift in Sources */,
+				7B73620C2B7880D40006E588 /* BirthdayCardView.swift in Sources */,
+				7B7362092B787C1F0006E588 /* BirthdayListViewController.swift in Sources */,
+				7B7362152B78976F0006E588 /* SignUpModel.swift in Sources */,
+				7B73620E2B78843E0006E588 /* CardModel.swift in Sources */,
 				7B9A02442B7604B000DE2FCF /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
