@@ -62,10 +62,10 @@ final class SignUpViewController: UIViewController {
         let textField = UITextField(frame: CGRect(
             x: 20,
             y: 350,
-            width: 335,
+            width: view.frame.width - 40,
             height: 40
         ))
-
+        textField.addBottomLine()
         textField.placeholder = "e-mail"
         return textField
     }()
@@ -75,7 +75,7 @@ final class SignUpViewController: UIViewController {
             x: 20,
             y: 393,
             width: 175,
-            height: 44
+            height: 40
         ))
         label.text = "Password"
         label.textColor = .purple
@@ -87,10 +87,10 @@ final class SignUpViewController: UIViewController {
         let textField = UITextField(frame: CGRect(
             x: 20,
             y: 433,
-            width: 335,
+            width: view.frame.width - 40,
             height: 40
         ))
-
+        textField.addBottomLine()
         textField.placeholder = "password"
         return textField
     }()

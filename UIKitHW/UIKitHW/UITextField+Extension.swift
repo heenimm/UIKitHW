@@ -15,7 +15,7 @@ extension UITextField {
         ))
         datePicker.datePickerMode = .date
         inputView = datePicker
-//        addTarget(self, action: #selector(didPickerChange(paramdatePicker:)), for: .valueChanged)
+        //        addTarget(self, action: #selector(didPickerChange(paramdatePicker:)), for: .valueChanged)
         let toolbar = UIToolbar(frame: CGRect(
             x: 0,
             y: 0,
@@ -51,5 +51,13 @@ extension UITextField {
 
     @objc private func tapToolbarCancel() {
         resignFirstResponder()
+    }
+
+    func addBottomLine() {
+        let bottomLine = CALayer()
+        bottomLine.frame = CGRect(x: 0, y: frame.size.height - 1, width: frame.size.width, height: 1)
+        bottomLine.backgroundColor = UIColor.gray.cgColor
+        borderStyle = .none
+        layer.addSublayer(bottomLine)
     }
 }
