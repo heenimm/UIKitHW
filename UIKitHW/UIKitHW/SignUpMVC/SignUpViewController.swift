@@ -119,8 +119,25 @@ final class SignUpViewController: UIViewController {
         button.titleLabel?.text = "Use FaceID"
         button.backgroundColor = UIColor(named: "AppRed")
         button.layer.cornerRadius = 6
+        button.setTitle("Login", for: .normal)
         button.titleLabel?.font = UIFont(name: "Verdana-Bold", size: 16)
         button.addTarget(self, action: #selector(openBirthdayListScreen), for: .touchUpInside)
+        button.tintColor = .white
+        return button
+    }()
+
+    private lazy var iconButton: UIButton = {
+        let button = UIButton(frame: CGRect(
+            x: view.frame.width - 60,
+            y: 436,
+            width: 40,
+            height: 28
+        ))
+        button.addTarget(self, action: #selector(openBirthdayListScreen), for: .touchUpInside)
+        button.setBackgroundImage(
+            UIImage(systemName: "eye.slash.fill")?.withTintColor(.lightGray, renderingMode: .alwaysOriginal),
+            for: .normal
+        )
         return button
     }()
 
@@ -148,7 +165,7 @@ final class SignUpViewController: UIViewController {
         view.backgroundColor = .white
         view.addSubviews(iconImageView, appNameLabel, signInLabel)
         view.addSubviews(emailLabel, emailTextField, passwordLabel, passwordTextField)
-        view.addSubviews(faceIdLabel, switcher, signInButton)
+        view.addSubviews(faceIdLabel, switcher, signInButton, iconButton)
     }
 
     @objc private func openBirthdayListScreen() {
