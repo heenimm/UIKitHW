@@ -50,8 +50,6 @@ final class АnagramViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
 
-    // MARK: - Life Cycle
-
     private func initViews(word: String) {
         informationView.wordReverseLabel.text = self.word.getWord(word: word).capitalized
         informationView.wordLabel.text = word
