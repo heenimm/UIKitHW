@@ -31,7 +31,7 @@ class StartGameViewController: UIViewController {
             origin: CGPoint(x: 0, y: 0),
             size: CGSize(width: view.frame.width, height: view.frame.height)
         ))
-        imageView.image = UIImage(named: "Background")
+        imageView.image = UIImage(named: "background")
         return imageView
     }()
 
