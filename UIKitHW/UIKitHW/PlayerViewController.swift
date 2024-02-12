@@ -3,9 +3,11 @@
 
 import UIKit
 
-///
+///PlayerViewController управляет страницей на которой отображен список треков
 final class PlayerViewController: UIViewController {
+    
     // MARK: -
+    var tracks = 
 
     // MARK: -
 
