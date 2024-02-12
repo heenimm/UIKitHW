@@ -218,12 +218,18 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="last"/>
+                                <connections>
+                                    <action selector="prevButton:" destination="YNI-hy-z5o" eventType="touchUpInside" id="8bW-6r-Pvg"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fpc-Nc-3Gh">
                                 <rect key="frame" x="225" y="684" width="48" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="next"/>
+                                <connections>
+                                    <action selector="nextButton:" destination="YNI-hy-z5o" eventType="touchUpInside" id="iFk-du-LCP"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HOK-ZI-d4B">
                                 <rect key="frame" x="22" y="24" width="14" height="14"/>
@@ -285,7 +291,7 @@
             <color red="0.28235294117647058" green="0.22352941176470589" blue="0.44313725490196076" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="AppShadow">
-            <color red="0.40784313725490196" green="0.20000000000000001" blue="0.78823529411764703" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.40784313725490196" green="0.20000000000000001" blue="0.78823529411764703" alpha="0.69999998807907104" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

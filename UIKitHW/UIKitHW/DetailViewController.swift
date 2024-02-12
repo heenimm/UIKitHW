@@ -39,12 +39,21 @@ final class DetailViewController: UIViewController {
         dismiss(animated: true)
     }
 
+    @IBAction func prevButton(_ sender: UIButton) {
+        player.stop()
+    }
+
+    @IBAction func nextButton(_ sender: UIButton) {}
+
+    var updater: CADisplayLink! = nil
     private func audio() {
+        playButton.isSelected = !(playButton.isSelected)
         do {
             if playButton.isSelected {
-                if let audioPath = Bundle.main.path(forResource: "firstTrack", ofType: "mp3") {
+                if let audioPath = Bundle.main.path(forResource: "secondTrack", ofType: "mp3") {
                     try player = AVAudioPlayer(contentsOf: URL(fileURLWithPath: audioPath))
                     trackSlider.maximumValue = Float(player.duration)
+                    timeLabel.text = String(player.currentTime)
                     player.play()
                 }
             } else {
