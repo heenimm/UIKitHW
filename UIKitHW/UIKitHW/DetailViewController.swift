@@ -31,7 +31,7 @@ final class DetailViewController: UIViewController {
         boardSlider.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi / 2))
     }
 
-    // MARK: -
+    // MARK: - Public Methods
 
     @IBAction func playedTrack(_ sender: UISlider) {
         if sender == trackSlider {
@@ -55,8 +55,9 @@ final class DetailViewController: UIViewController {
     @IBAction func nextButton(_ sender: UIButton) {
         player.currentTime += 15
     }
-
-
+    
+    // MARK: - PrivateMethods
+    
     private func audio() {
         playButton.isSelected = !(playButton.isSelected)
         do {
@@ -74,14 +75,4 @@ final class DetailViewController: UIViewController {
             print("Error")
         }
     }
-
-    /*
-     // MARK: - Navigation
-
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
 }

@@ -7,7 +7,9 @@ import UIKit
 final class PlayerViewController: UIViewController {
     
     // MARK: -
-    var tracks = 
+    var tracks: [PlayerModel] = [
+        PlayerModel(title: "", singer: "")
+    ]
 
     // MARK: -
 
