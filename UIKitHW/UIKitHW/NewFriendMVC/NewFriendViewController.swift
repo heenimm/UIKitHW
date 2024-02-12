@@ -64,6 +64,6 @@ final class NewFriendViewController: UIViewController {
     @objc private func add() {}
 
     @objc private func cancel() {
-        navigationController?.popViewController(animated: true)
+        dismiss(animated: true)
     }
 }
