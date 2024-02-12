@@ -3,9 +3,13 @@
 
 import UIKit
 
-class PlayerViewController: UIViewController {
+///
+final class PlayerViewController: UIViewController {
+    // MARK: -
+
+    // MARK: -
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor(named: "AppPurple")
     }
 }
