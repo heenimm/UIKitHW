@@ -37,8 +37,6 @@ final class DetailViewController: UIViewController {
         }
     }
 
-    @IBAction func makeVolumeSlider(_ sender: UISlider) {}
-
     @IBAction func clickedCancel(_ sender: Any) {
         player.stop()
         dismiss(animated: true)
