@@ -26,6 +26,7 @@ final class DetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.layer.cornerRadius = 30
         boardSlider.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi / 2))
     }
 
