@@ -43,8 +43,10 @@ final class SignUpScreenViewController: UIViewController {
     }
 }
 
+// MARK: - Extension UITextFieldDelegate
+
 extension SignUpScreenViewController: UITextFieldDelegate {
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == emailTextField {
             passwordTextField.becomeFirstResponder()
             signUpButton.isEnabled = true

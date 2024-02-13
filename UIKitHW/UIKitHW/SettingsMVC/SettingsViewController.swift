@@ -5,13 +5,14 @@ import UIKit
 
 /// SettingsViewController отображены поля ввода данных для именниников
 final class SettingsViewController: UIViewController {
-    
-    //MARK: - Life Cycle
+    // MARK: - Life Cycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
-    //MARK: - Private Methods
+    // MARK: - Private Methods
+
     @IBAction func payiedButton(_ sender: UIButton) {
         let alert = UIAlertController(
             title: "Выставить счет?",

@@ -1,6 +1,7 @@
 // SettingsModel.swift
 // Copyright © RoadMap. All rights reserved.
 
+/// SettingsModel используем модель для заполнения списка
 struct SettingsModel {
     var fullName: String
     var numberGuests: Int
