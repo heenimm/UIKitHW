@@ -23,7 +23,7 @@ class UserInfoView: UIView {
         return label
     }()
 
-    private lazy var nameTextField: UITextField = {
+    lazy var nameTextField: UITextField = {
         let textField = UITextField(frame: CGRect(
             x: 20,
             y: 70,
@@ -46,7 +46,7 @@ class UserInfoView: UIView {
         return label
     }()
 
-    private lazy var birthdayTextField: UITextField = {
+    lazy var birthdayTextField: UITextField = {
         let textField = UITextField(frame: CGRect(
             x: 20,
             y: 140,
@@ -76,7 +76,7 @@ class UserInfoView: UIView {
         return pickerView
     }()
 
-    private lazy var ageTextField: UITextField = {
+    lazy var ageTextField: UITextField = {
         let textField = UITextField(frame: CGRect(
             x: 20,
             y: 220,
@@ -135,7 +135,7 @@ class UserInfoView: UIView {
         return label
     }()
 
-    private lazy var telegramTextField: UITextField = {
+    lazy var telegramTextField: UITextField = {
         let textField = UITextField(frame: CGRect(
             x: 20,
             y: 375,

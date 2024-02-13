@@ -7,6 +7,8 @@ import UIKit
 final class NewFriendViewController: UIViewController {
     // MARK: - Private Properties
 
+    var friendCards: [CardModel] = []
+
     private lazy var userPhotoImageView: UIImageView = {
         let imageView = UIImageView(frame: CGRect(
             x: view.frame.width / 2 - 65,
@@ -61,7 +63,16 @@ final class NewFriendViewController: UIViewController {
         navigationItem.rightBarButtonItem = rightBarButton
     }
 
-    @objc private func add() {}
+    @objc private func add() {
+        friendCards.append(
+            CardModel(
+                icon: userPhotoImageView.image?.description ?? "",
+                name: userInfoView.nameTextField.text ?? "",
+                date: userInfoView.birthdayTextField.text ?? "",
+                days: "5"
+            )
+        )
+    }
 
     @objc private func cancel() {
         dismiss(animated: true)
