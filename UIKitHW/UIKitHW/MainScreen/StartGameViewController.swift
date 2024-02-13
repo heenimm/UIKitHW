@@ -149,12 +149,6 @@ class StartGameViewController: UIViewController {
         )
         let actionDone = UIAlertAction(title: "OK", style: .default) { _ in
             if let number = Int(alertController.textFields?.first?.text ?? " ") {
-//                if number < self.randomNumber {
-//                    self.makeAlert("Попробуй еще раз", "Вы ввели слишком маленькое число", .alert)
-//                }
-//                if number > self.randomNumber {
-//                    self.makeAlert("Попробуй еще раз", "Вы ввели слишком большое число", .alert)
-//                }
                 if number == self.randomNumber {
                     self.makeAlert("Поздравляем", "Вы угадали")
                 } else {
