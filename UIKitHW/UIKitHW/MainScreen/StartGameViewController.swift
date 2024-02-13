@@ -114,58 +114,7 @@ class StartGameViewController: UIViewController {
         present(alertController, animated: true)
     }
 
-    @objc private func makeCalculateAlert() {
-        let alertController = UIAlertController(
-            title: "Введите ваши числа",
-            message: "",
-            preferredStyle: .alert
-        )
-        let chooseOperation = UIAlertAction(title: "Выбрать операцию", style: .default) { _ in
-            if let first = Int(alertController.textFields?.first?.text ?? ""),
-               let second = Int(alertController.textFields?.last?.text ?? "")
-            {
-                self.chooseOperationAlert(first, second)
-            }
-        }
-        let actionDone = UIAlertAction(title: "Готово", style: .cancel) { _ in }
-        alertController.addTextField { textField in
-            textField.placeholder = "Число 1"
-            textField.keyboardType = .numberPad
-        }
-        alertController.addTextField { textField in
-            textField.placeholder = "Число 2"
-            textField.keyboardType = .numberPad
-        }
-        alertController.addAction(actionDone)
-        alertController.addAction(chooseOperation)
-        present(alertController, animated: true)
-    }
-
-    @objc private func makeGuessNumberAlert() {
-        let alertController = UIAlertController(
-            title: "Угадай число от 1 до 10",
-            message: "",
-            preferredStyle: .alert
-        )
-        let actionDone = UIAlertAction(title: "OK", style: .default) { _ in
-            if let number = Int(alertController.textFields?.first?.text ?? " ") {
-                if number == self.randomNumber {
-                    self.makeAlert("Поздравляем", "Вы угадали")
-                } else {
-                    self.makeAlert("Упс", "Это неверный ответ")
-                }
-            }
-        }
-        let actionCancel = UIAlertAction(title: "Отмена", style: .cancel) { _ in }
-        alertController.addTextField { textField in
-            textField.placeholder = "Введите число"
-            textField.keyboardType = .numberPad
-        }
-        alertController.addAction(actionDone)
-        alertController.addAction(actionCancel)
-        present(alertController, animated: true)
-    }
-
+    
     private func makeAlert(
         _ title: String,
         _ message: String
@@ -221,4 +170,57 @@ class StartGameViewController: UIViewController {
         alertController.addAction(actionCancel)
         present(alertController, animated: true)
     }
+    
+    @objc private func makeCalculateAlert() {
+        let alertController = UIAlertController(
+            title: "Введите ваши числа",
+            message: "",
+            preferredStyle: .alert
+        )
+        let chooseOperation = UIAlertAction(title: "Выбрать операцию", style: .default) { _ in
+            if let first = Int(alertController.textFields?.first?.text ?? ""),
+               let second = Int(alertController.textFields?.last?.text ?? "")
+            {
+                self.chooseOperationAlert(first, second)
+            }
+        }
+        let actionDone = UIAlertAction(title: "Готово", style: .cancel) { _ in }
+        alertController.addTextField { textField in
+            textField.placeholder = "Число 1"
+            textField.keyboardType = .numberPad
+        }
+        alertController.addTextField { textField in
+            textField.placeholder = "Число 2"
+            textField.keyboardType = .numberPad
+        }
+        alertController.addAction(actionDone)
+        alertController.addAction(chooseOperation)
+        present(alertController, animated: true)
+    }
+
+    @objc private func makeGuessNumberAlert() {
+        let alertController = UIAlertController(
+            title: "Угадай число от 1 до 10",
+            message: "",
+            preferredStyle: .alert
+        )
+        let actionDone = UIAlertAction(title: "OK", style: .default) { _ in
+            if let number = Int(alertController.textFields?.first?.text ?? " ") {
+                if number == self.randomNumber {
+                    self.makeAlert("Поздравляем", "Вы угадали")
+                } else {
+                    self.makeAlert("Упс", "Это неверный ответ")
+                }
+            }
+        }
+        let actionCancel = UIAlertAction(title: "Отмена", style: .cancel) { _ in }
+        alertController.addTextField { textField in
+            textField.placeholder = "Введите число"
+            textField.keyboardType = .numberPad
+        }
+        alertController.addAction(actionDone)
+        alertController.addAction(actionCancel)
+        present(alertController, animated: true)
+    }
+
 }
