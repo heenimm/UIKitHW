@@ -5,13 +5,13 @@ import UIKit
 
 /// PlayerViewController управляет страницей на которой отображен список треков
 final class PlayerViewController: UIViewController {
-    // MARK: -
+    // MARK: - Public Properties
 
     var tracks: [PlayerModel] = [
         PlayerModel(title: "", singer: "")
     ]
 
-    // MARK: -
+    // MARK: - Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
