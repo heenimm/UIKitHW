@@ -3,11 +3,12 @@
 
 import UIKit
 
-/// SignUpViewController окно на котором вводятся учетные данные и по нажатию на кнопку открывается список именниников
+/// SignUpViewController окно на котором вводятся учетные данные и по нажатию на кнопку открывается список именинников
 final class SignUpViewController: UIViewController {
     // MARK: - Private Properties
 
-    var model = SignUpModel()
+    private var model = SignUpModel()
+    private var isEnabledButton = false
 
     private lazy var iconImageView: UIImageView = {
         let imageView = UIImageView(frame: CGRect(
@@ -69,6 +70,7 @@ final class SignUpViewController: UIViewController {
         ))
         textField.addBottomLine()
         textField.placeholder = "e-mail"
+        textField.delegate = self
         return textField
     }()
 
@@ -94,6 +96,7 @@ final class SignUpViewController: UIViewController {
         ))
         textField.addBottomLine()
         textField.isSecureTextEntry = true
+        textField.delegate = self
         textField.placeholder = "password"
         return textField
     }()
@@ -126,7 +129,7 @@ final class SignUpViewController: UIViewController {
         button.titleLabel?.font = UIFont(name: "Verdana-Bold", size: 16)
         button.addTarget(self, action: #selector(openBirthdayListScreen), for: .touchUpInside)
         button.tintColor = .white
-        button.isEnabled = true
+        button.isEnabled = isEnabledButton
         return button
     }()
 
@@ -137,9 +140,10 @@ final class SignUpViewController: UIViewController {
             width: 40,
             height: 28
         ))
-        button.addTarget(self, action: #selector(openBirthdayListScreen), for: .touchUpInside)
-        button.setBackgroundImage(
-            UIImage(systemName: "eye.slash.fill")?.withTintColor(.lightGray, renderingMode: .alwaysOriginal),
+        button.addTarget(self, action: #selector(showPassword), for: .touchUpInside)
+        button.setImage(
+            UIImage(systemName: "eye.slash.fill")?.withTintColor(.lightGray,
+                                                                 renderingMode: .alwaysOriginal),
             for: .normal
         )
         return button
@@ -172,15 +176,31 @@ final class SignUpViewController: UIViewController {
         view.addSubviews(faceIdLabel, switcher, signInButton, iconButton)
     }
 
-    private func validateEmail() {
-        if let email = emailTextField.text {
-            if model.isValidEmail(email: email) {
-                signInButton.isEnabled = true
-            }
-        }
+    var isPasswordVisible = false
+
+    @objc private func showPassword() {
+        isPasswordVisible.toggle()
+        passwordTextField.isSecureTextEntry = !isPasswordVisible
+        let imageName = isPasswordVisible ? "eye.fill" : "eye.slash.fill"
+        let image = UIImage(systemName: imageName)?.withTintColor(.lightGray, renderingMode: .alwaysOriginal)
+        iconButton.setImage(image, for: .normal)
     }
 
     @objc private func openBirthdayListScreen() {
         navigationController?.pushViewController(BirthdayListViewController(), animated: true)
+    }
+}
+
+// MARK: - Extension
+
+extension SignUpViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if let text = emailTextField.text, textField == emailTextField {
+            passwordTextField.becomeFirstResponder()
+            signInButton.isEnabled = model.isValidEmail(email: text)
+        } else {
+            emailTextField.resignFirstResponder()
+        }
+        return true
     }
 }
