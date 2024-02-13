@@ -7,6 +7,8 @@ import UIKit
 final class SignUpViewController: UIViewController {
     // MARK: - Private Properties
 
+    var model = SignUpModel()
+
     private lazy var iconImageView: UIImageView = {
         let imageView = UIImageView(frame: CGRect(
             x: view.frame.width / 2 - 65,
@@ -123,6 +125,7 @@ final class SignUpViewController: UIViewController {
         button.titleLabel?.font = UIFont(name: "Verdana-Bold", size: 16)
         button.addTarget(self, action: #selector(openBirthdayListScreen), for: .touchUpInside)
         button.tintColor = .white
+        button.isEnabled = true
         return button
     }()
 
@@ -166,6 +169,14 @@ final class SignUpViewController: UIViewController {
         view.addSubviews(iconImageView, appNameLabel, signInLabel)
         view.addSubviews(emailLabel, emailTextField, passwordLabel, passwordTextField)
         view.addSubviews(faceIdLabel, switcher, signInButton, iconButton)
+    }
+
+    private func validateEmail() {
+        if let email = emailTextField.text {
+            if model.isValidEmail(email: email) {
+                signInButton.isEnabled = true
+            }
+        }
     }
 
     @objc private func openBirthdayListScreen() {

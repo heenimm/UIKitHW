@@ -14,6 +14,7 @@
 		7B7362132B7897360006E588 /* NewFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7362122B7897360006E588 /* NewFriendViewController.swift */; };
 		7B7362172B78C16C0006E588 /* UserInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7362162B78C16C0006E588 /* UserInfoView.swift */; };
 		7B7362192B7932200006E588 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7362182B7932200006E588 /* UITextField+Extension.swift */; };
+		7B993F832B7B507A008AB063 /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B993F822B7B507A008AB063 /* SignUpModel.swift */; };
 		7B9A02422B7604B000DE2FCF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9A02412B7604B000DE2FCF /* AppDelegate.swift */; };
 		7B9A02442B7604B000DE2FCF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9A02432B7604B000DE2FCF /* SceneDelegate.swift */; };
 		7B9A02462B7604B000DE2FCF /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9A02452B7604B000DE2FCF /* SignUpViewController.swift */; };
@@ -51,6 +52,7 @@
 		7B7362122B7897360006E588 /* NewFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFriendViewController.swift; sourceTree = "<group>"; };
 		7B7362162B78C16C0006E588 /* UserInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoView.swift; sourceTree = "<group>"; };
 		7B7362182B7932200006E588 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
+		7B993F822B7B507A008AB063 /* SignUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
 		7B9A023E2B7604B000DE2FCF /* UIKitHW.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitHW.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B9A02412B7604B000DE2FCF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7B9A02432B7604B000DE2FCF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				7B9A02452B7604B000DE2FCF /* SignUpViewController.swift */,
+				7B993F822B7B507A008AB063 /* SignUpModel.swift */,
 			);
 			path = SignUpMVC;
 			sourceTree = "<group>";
@@ -362,6 +365,7 @@
 				7B9A02462B7604B000DE2FCF /* SignUpViewController.swift in Sources */,
 				7B7362132B7897360006E588 /* NewFriendViewController.swift in Sources */,
 				7B9A024C2B7604B000DE2FCF /* UIKitHW.xcdatamodeld in Sources */,
+				7B993F832B7B507A008AB063 /* SignUpModel.swift in Sources */,
 				7B7362102B78904F0006E588 /* UIView+Extension.swift in Sources */,
 				7B9A02422B7604B000DE2FCF /* AppDelegate.swift in Sources */,
 				7B7362172B78C16C0006E588 /* UserInfoView.swift in Sources */,
