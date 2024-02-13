@@ -93,6 +93,7 @@ final class SignUpViewController: UIViewController {
             height: 40
         ))
         textField.addBottomLine()
+        textField.isSecureTextEntry = true
         textField.placeholder = "password"
         return textField
     }()
