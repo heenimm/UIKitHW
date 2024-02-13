@@ -6,13 +6,12 @@ import UIKit
 
 /// Окно на котором воспроизводится трек с помощью UISlider
 final class DetailViewController: UIViewController {
-    
-    //MARK: - Private Properties
-    
+    // MARK: - Private Properties
+
     private var player = AVAudioPlayer()
     private var updater: CADisplayLink! = nil
 
-    //MARK: - IBOutlet
+    // MARK: - IBOutlet
 
     @IBOutlet var trackSlider: UISlider!
     @IBOutlet var boardSlider: UISlider!
@@ -20,12 +19,11 @@ final class DetailViewController: UIViewController {
     @IBOutlet var playButton: UIButton!
     @IBAction func playButton(_ sender: UIButton) {
         playButton.isSelected = !(playButton.isSelected)
-        audio()
+        reproduceAudio()
     }
-    
-    
+
     // MARK: - Life Cycle
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         boardSlider.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi / 2))
@@ -39,9 +37,7 @@ final class DetailViewController: UIViewController {
         }
     }
 
-    @IBAction func makeVolumeSlider(_ sender: UISlider) {
-        
-    }
+    @IBAction func makeVolumeSlider(_ sender: UISlider) {}
 
     @IBAction func clickedCancel(_ sender: Any) {
         player.stop()
@@ -55,10 +51,10 @@ final class DetailViewController: UIViewController {
     @IBAction func nextButton(_ sender: UIButton) {
         player.currentTime += 15
     }
-    
+
     // MARK: - PrivateMethods
-    
-    private func audio() {
+
+    private func reproduceAudio() {
         playButton.isSelected = !(playButton.isSelected)
         do {
             if playButton.isSelected {

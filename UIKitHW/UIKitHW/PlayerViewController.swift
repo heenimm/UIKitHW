@@ -3,10 +3,10 @@
 
 import UIKit
 
-///PlayerViewController управляет страницей на которой отображен список треков
+/// PlayerViewController управляет страницей на которой отображен список треков
 final class PlayerViewController: UIViewController {
-    
     // MARK: -
+
     var tracks: [PlayerModel] = [
         PlayerModel(title: "", singer: "")
     ]
