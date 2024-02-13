@@ -8,7 +8,12 @@ import UIKit
 final class DetailViewController: UIViewController {
     // MARK: - Private Properties
 
-    private var player = AVAudioPlayer()
+//    private var player = AVAudioPlayer()
+
+    private var currentActivePlayer: AVPlayer?
+
+    private var player: AVPlayer?
+//    private var playerTwo: AVPlayer?
     private var updater: CADisplayLink! = nil
 
     // MARK: - IBOutlet
@@ -17,10 +22,6 @@ final class DetailViewController: UIViewController {
     @IBOutlet var boardSlider: UISlider!
     @IBOutlet var timeLabel: UILabel!
     @IBOutlet var playButton: UIButton!
-    @IBAction func playButton(_ sender: UIButton) {
-        playButton.isSelected = !(playButton.isSelected)
-        reproduceAudio()
-    }
 
     // MARK: - Life Cycle
 
@@ -34,40 +35,57 @@ final class DetailViewController: UIViewController {
 
     @IBAction func playedTrack(_ sender: UISlider) {
         if sender == trackSlider {
-            player.currentTime = TimeInterval(sender.value)
+//            player.currentTime = TimeInterval(sender.value)
         }
     }
 
+    @IBAction func playButton(_ sender: UIButton) {
+//        playButton.isSelected = !(playButton.isSelected)
+        reproduceAudio()
+    }
+
     @IBAction func clickedCancel(_ sender: Any) {
-        player.stop()
+        player?.pause()
         dismiss(animated: true)
     }
 
     @IBAction func prevButton(_ sender: UIButton) {
-        player.currentTime -= 15
+        player?.play()
     }
 
     @IBAction func nextButton(_ sender: UIButton) {
-        player.currentTime += 15
+        player?.pause()
     }
 
     // MARK: - PrivateMethods
 
     private func reproduceAudio() {
-        playButton.isSelected = !(playButton.isSelected)
-        do {
-            if playButton.isSelected {
-                if let audioPath = Bundle.main.path(forResource: "secondTrack", ofType: "mp3") {
-                    try player = AVAudioPlayer(contentsOf: URL(fileURLWithPath: audioPath))
-                    trackSlider.maximumValue = Float(player.duration)
-                    timeLabel.text = String(player.currentTime)
-                    player.play()
+        if let audioPath = Bundle.main.url(forResource: "secondTrack", withExtension: "mp3") {
+            let playerItem = AVPlayerItem(url: audioPath)
+            player = AVPlayer(playerItem: playerItem)
+
+            currentActivePlayer = player
+
+            player?.addPeriodicTimeObserver(
+                forInterval: CMTime(seconds: 1, preferredTimescale: 1),
+                queue: DispatchQueue.main
+            ) { [weak self] time in
+                if let duration = self?.player?.currentItem?.duration.seconds {
+                    self?.trackSlider?.value = Float(time.seconds / duration)
                 }
-            } else {
-                player.stop()
             }
-        } catch {
-            print("Error")
+        }
+    }
+
+    private func switchesTracks() {
+        if currentActivePlayer == player {
+            currentActivePlayer = player
+            player?.pause()
+            player?.play()
+        } else {
+            currentActivePlayer = player
+            player?.pause()
+            player?.play()
         }
     }
 }
