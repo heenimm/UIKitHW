@@ -3,7 +3,7 @@
 
 import UIKit
 
-/// DetailCoffeeViewController
+/// DetailCoffeeViewController отображает меню выбора кофе
 final class DetailCoffeeViewController: UIViewController {
     // MARK: - Private Properties
 
@@ -36,7 +36,7 @@ final class DetailCoffeeViewController: UIViewController {
             width: 150,
             height: 150
         ))
-        imageView.image = UIImage(named: "американо")
+        imageView.image = segmentedControlImages[0]
         return imageView
     }()
 
@@ -116,16 +116,36 @@ final class DetailCoffeeViewController: UIViewController {
     override func viewDidLoad() {
         view.backgroundColor = .white
         setupSubview()
+        configureBarButton()
     }
 
     // MARK: - Private Methods
 
     private func setupSubview() {
-        roastTypeViewController.textRoastTypeButton = { text in
+        roastTypeViewController.textRoastTypeButton = { weak text in
             self.roastTypeButton.titleLabel?.text = text
         }
         view.addSubviews(backgroundView, coffeeImageView, segmentedControl)
         view.addSubviews(roastTypeButton, ingredientButton, buyButton, priceLabel)
+    }
+
+    private func configureBarButton() {
+        let shareBarButton = UIBarButtonItem(
+            image: UIImage(named: "share"),
+            style: .done,
+            target: self,
+            action: #selector(makeActivityViewController)
+        )
+        navigationItem.rightBarButtonItem = shareBarButton
+    }
+
+    @objc private func makeActivityViewController() {
+        let activityViewController = UIActivityViewController(
+            activityItems: ["Промокод на чашку кофе"],
+            applicationActivities: nil
+        )
+        activityViewController.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
+        present(activityViewController, animated: true)
     }
 
     @objc private func selectedValue(target: UISegmentedControl) {

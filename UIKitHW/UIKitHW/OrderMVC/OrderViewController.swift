@@ -168,6 +168,21 @@ final class OrderViewController: UIViewController {
         return label
     }()
 
+    private lazy var buyButton: UIButton = {
+        let button = UIButton(frame: CGRect(
+            x: 15,
+            y: 600,
+            width: 345,
+            height: 53
+        ))
+        button.backgroundColor = UIColor(named: "AppGreen")
+        button.layer.cornerRadius = 10
+        button.setTitle("Оплатить", for: .normal)
+        button.titleLabel?.font = .boldSystemFont(ofSize: 18)
+        button.addTarget(self, action: #selector(openGratitudeController), for: .touchUpInside)
+        return button
+    }()
+
     // MARK: - Life Cycle
 
     override func viewDidLoad() {
@@ -181,14 +196,19 @@ final class OrderViewController: UIViewController {
         view.addSubviews(titleLabel, coffeeTitleLabel, milkLabel, ingredientLabel)
         view.addSubviews(cancelButton, leftImageView, rightImageView, centerImageView)
         view.addSubviews(priceMilkLabel, priceCoffeeLabel, priceIngredientLabel)
-        view.addSubviews(totalAmountLabel)
+        view.addSubviews(totalAmountLabel, buyButton)
+    }
+
+    private func calculatedPrice() -> Int {
+        100
     }
 
     @objc private func tapCancelButton() {
         dismiss(animated: true)
     }
 
-    private func calculatedPrice() -> Int {
-        100
+    @objc private func openGratitudeController() {
+        dismiss(animated: true)
+        navigationController?.pushViewController(GratitudeController(), animated: true)
     }
 }

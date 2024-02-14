@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B0872FD2B7C8C0800A1A6A2 /* GratitudeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0872FC2B7C8C0700A1A6A2 /* GratitudeController.swift */; };
 		7B993F7A2B7B37E6008AB063 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B993F792B7B37E6008AB063 /* UIView+Extension.swift */; };
 		7B993F7C2B7B4612008AB063 /* RoastTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B993F7B2B7B4612008AB063 /* RoastTypeViewController.swift */; };
 		7B993F802B7B464E008AB063 /* GrainsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B993F7F2B7B464E008AB063 /* GrainsViewController.swift */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7B0872FC2B7C8C0700A1A6A2 /* GratitudeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GratitudeController.swift; sourceTree = "<group>"; };
 		7B993F792B7B37E6008AB063 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		7B993F7B2B7B4612008AB063 /* RoastTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoastTypeViewController.swift; sourceTree = "<group>"; };
 		7B993F7F2B7B464E008AB063 /* GrainsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrainsViewController.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 				7B9A024D2B7604B100DE2FCF /* Assets.xcassets */,
 				7B9A02522B7604B100DE2FCF /* Info.plist */,
 				7B9A024A2B7604B000DE2FCF /* UIKitHW.xcdatamodeld */,
+				7B0872FC2B7C8C0700A1A6A2 /* GratitudeController.swift */,
 			);
 			path = UIKitHW;
 			sourceTree = "<group>";
@@ -366,6 +369,7 @@
 				7B9A02422B7604B000DE2FCF /* AppDelegate.swift in Sources */,
 				7B993F7A2B7B37E6008AB063 /* UIView+Extension.swift in Sources */,
 				7B9A02442B7604B000DE2FCF /* SceneDelegate.swift in Sources */,
+				7B0872FD2B7C8C0800A1A6A2 /* GratitudeController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
