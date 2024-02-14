@@ -7,9 +7,17 @@ import UIKit
 /// DetailCoffeeViewController отображает меню выбора кофе
 enum Constant {
     static let darkRoastType = "Темная обжарка"
-    static let promocode = "Промокод на чашку кофе"
-    static let backgroundViewColor = "AppCoffee"
+    static let promoCode = "Промокод на чашку кофе"
+    static let coffeeColor = "AppCoffee"
+    static let greyColor = "AppGrey"
+    static let greenColor = "AppGreen"
+    static let ingredient = "Дополнительные ингредиенты"
+    static let ordered = "Заказать"
+    static let grainsImage = "grains"
+    static let plusImage = "plus"
+    static let shareImage = "share"
 }
+
 final class DetailCoffeeViewController: UIViewController {
     // MARK: - Private Properties
 
@@ -30,7 +38,7 @@ final class DetailCoffeeViewController: UIViewController {
             width: view.frame.width,
             height: 346
         ))
-        view.backgroundColor = UIColor(named: Constant.backgroundViewColor)
+        view.backgroundColor = UIColor(named: Constant.coffeeColor)
         view.layer.cornerRadius = 20
         return view
     }()
@@ -54,7 +62,7 @@ final class DetailCoffeeViewController: UIViewController {
             width: Int(view.frame.width) - Insets.leftInset,
             height: 44
         )
-        segmentedControl.backgroundColor = UIColor(named: "AppGrey")
+        segmentedControl.backgroundColor = UIColor(named: Constant.greyColor)
         segmentedControl.selectedSegmentIndex = 0
         segmentedControl.addTarget(self, action: #selector(selectedValue), for: .valueChanged)
         return segmentedControl
@@ -66,8 +74,8 @@ final class DetailCoffeeViewController: UIViewController {
             valueY: 482,
             width: 165,
             height: 165,
-            background: "AppGrey",
-            imageName: "grains",
+            background: Constant.greyColor,
+            imageName: Constant.grainsImage,
             title: Constant.darkRoastType
         )
         button.addTarget(self, action: #selector(openRoastTypeViewController), for: .touchUpInside)
@@ -80,9 +88,9 @@ final class DetailCoffeeViewController: UIViewController {
             valueY: 482,
             width: 165,
             height: 165,
-            background: "AppGrey",
-            imageName: "plus",
-            title: "Дополнительные ингредиенты"
+            background: Constant.greyColor,
+            imageName: Constant.plusImage,
+            title: Constant.ingredient
         )
         button.titleEdgeInsets = UIEdgeInsets(top: 80, left: -15, bottom: -2, right: 10)
         button.imageEdgeInsets = UIEdgeInsets(top: -80, left: 65, bottom: -50, right: 10)
@@ -97,9 +105,9 @@ final class DetailCoffeeViewController: UIViewController {
             width: 345,
             height: 53
         ))
-        button.backgroundColor = UIColor(named: "AppGreen")
+        button.backgroundColor = UIColor(named: Constant.greenColor)
         button.layer.cornerRadius = 10
-        button.setTitle("Заказать", for: .normal)
+        button.setTitle(Constant.ordered, for: .normal)
         button.titleLabel?.font = .boldSystemFont(ofSize: 18)
         button.addTarget(self, action: #selector(openOrderViewController), for: .touchUpInside)
         return button
@@ -137,7 +145,7 @@ final class DetailCoffeeViewController: UIViewController {
 
     private func configureBarButton() {
         let shareBarButton = UIBarButtonItem(
-            image: UIImage(named: "share"),
+            image: UIImage(named: Constant.shareImage),
             style: .done,
             target: self,
             action: #selector(makeActivityViewController)
@@ -147,7 +155,7 @@ final class DetailCoffeeViewController: UIViewController {
 
     @objc private func makeActivityViewController() {
         let activityViewController = UIActivityViewController(
-            activityItems: [Constant.promocode],
+            activityItems: [Constant.promoCode],
             applicationActivities: nil
         )
         present(activityViewController, animated: true)
