@@ -3,6 +3,17 @@
 
 import UIKit
 
+private enum Constant {
+    static let darkRoastType = "Темная обжарка"
+    static let lightRoastType = "Светлая обжарка"
+    static let title = "Уточните обжарку зеренъ"
+    static let coffeeColor = "AppCoffee"
+    static let greyColor = "AppGrey"
+    static let greenColor = "AppGreen"
+    static let grainsImage = "grains"
+    static let lightRoastImage = "light_roast"
+}
+
 /// RoastTypeViewController
 final class RoastTypeViewController: UIViewController {
     var textRoastTypeHandler: ((String) -> Void)?
@@ -16,7 +27,7 @@ final class RoastTypeViewController: UIViewController {
             width: 294,
             height: 30
         ))
-        label.text = "Уточните обжарку зеренъ"
+        label.text = Constant.title
         label.font = UIFont(name: "Verdana-Bold", size: 18)
         return label
     }()
@@ -27,9 +38,9 @@ final class RoastTypeViewController: UIViewController {
             valueY: 102,
             width: 165,
             height: 165,
-            background: "AppGrey",
-            imageName: "grains",
-            title: "Светлая обжарка"
+            background: Constant.greyColor,
+            imageName: Constant.grainsImage,
+            title: Constant.lightRoastType
         )
         button.addTarget(self, action: #selector(tapTypeButton), for: .touchUpInside)
         return button
@@ -41,9 +52,9 @@ final class RoastTypeViewController: UIViewController {
             valueY: 102,
             width: 165,
             height: 165,
-            background: "AppGrey",
-            imageName: "light_roast",
-            title: "Темная обжарка"
+            background: Constant.greyColor,
+            imageName: Constant.lightRoastImage,
+            title: Constant.darkRoastType
         )
         button.addTarget(self, action: #selector(tapTypeButton), for: .touchUpInside)
         return button

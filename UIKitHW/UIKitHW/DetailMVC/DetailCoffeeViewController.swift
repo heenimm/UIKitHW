@@ -3,9 +3,8 @@
 
 import UIKit
 
-
 /// DetailCoffeeViewController отображает меню выбора кофе
-enum Constant {
+private enum Constant {
     static let darkRoastType = "Темная обжарка"
     static let promoCode = "Промокод на чашку кофе"
     static let coffeeColor = "AppCoffee"
@@ -16,6 +15,7 @@ enum Constant {
     static let grainsImage = "grains"
     static let plusImage = "plus"
     static let shareImage = "share"
+    static let leftInset = 40
 }
 
 final class DetailCoffeeViewController: UIViewController {
@@ -59,7 +59,7 @@ final class DetailCoffeeViewController: UIViewController {
         segmentedControl.frame = CGRect(
             x: 15,
             y: 368,
-            width: Int(view.frame.width) - Insets.leftInset,
+            width: Int(view.frame.width) - Constant.leftInset,
             height: 44
         )
         segmentedControl.backgroundColor = UIColor(named: Constant.greyColor)

@@ -4,7 +4,9 @@
 import Foundation
 import UIKit
 
+///Расширение для настройки имеджвью
 extension UIButton {
+    ///Изменила инициализацию для добавления дополнительных параметров
     convenience init(
         valueX: Int,
         valueY: Int,
