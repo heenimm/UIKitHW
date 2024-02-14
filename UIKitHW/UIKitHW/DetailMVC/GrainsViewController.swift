@@ -16,7 +16,7 @@ final class GrainsViewController: UIViewController {
         "Эспрессо 50мл +50 руб"
     ]
 
-    private lazy var titleLabel: UILabel = {
+    private let titleLabel: UILabel = {
         let label = UILabel(frame: CGRect(
             x: 20,
             y: 53,

@@ -20,7 +20,7 @@ final class RoastTypeViewController: UIViewController {
 
     // MARK: - Private Properties
 
-    private lazy var titleLabel: UILabel = {
+    private let titleLabel: UILabel = {
         let label = UILabel(frame: CGRect(
             x: 40,
             y: 53,

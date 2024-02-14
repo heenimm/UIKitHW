@@ -113,7 +113,7 @@ final class DetailCoffeeViewController: UIViewController {
         return button
     }()
 
-    lazy var priceLabel: UILabel = {
+    private lazy var priceLabel: UILabel = {
         let label = UILabel(frame: CGRect(
             x: 200,
             y: 669,
