@@ -3,7 +3,13 @@
 
 import UIKit
 
+
 /// DetailCoffeeViewController отображает меню выбора кофе
+enum Constant {
+    static let darkRoastType = "Темная обжарка"
+    static let promocode = "Промокод на чашку кофе"
+    static let backgroundViewColor = "AppCoffee"
+}
 final class DetailCoffeeViewController: UIViewController {
     // MARK: - Private Properties
 
@@ -24,7 +30,7 @@ final class DetailCoffeeViewController: UIViewController {
             width: view.frame.width,
             height: 346
         ))
-        view.backgroundColor = UIColor(named: "AppCoffee")
+        view.backgroundColor = UIColor(named: Constant.backgroundViewColor)
         view.layer.cornerRadius = 20
         return view
     }()
@@ -45,7 +51,7 @@ final class DetailCoffeeViewController: UIViewController {
         segmentedControl.frame = CGRect(
             x: 15,
             y: 368,
-            width: view.frame.width - 30,
+            width: Int(view.frame.width) - Insets.leftInset,
             height: 44
         )
         segmentedControl.backgroundColor = UIColor(named: "AppGrey")
@@ -62,7 +68,7 @@ final class DetailCoffeeViewController: UIViewController {
             height: 165,
             background: "AppGrey",
             imageName: "grains",
-            title: "Темная обжарка"
+            title: Constant.darkRoastType
         )
         button.addTarget(self, action: #selector(openRoastTypeViewController), for: .touchUpInside)
         return button
@@ -122,7 +128,7 @@ final class DetailCoffeeViewController: UIViewController {
     // MARK: - Private Methods
 
     private func setupSubview() {
-        roastTypeViewController.textRoastTypeButton = { [weak self] text in
+        roastTypeViewController.textRoastTypeHandler = { [weak self] text in
             self?.roastTypeButton.titleLabel?.text = text
         }
         view.addSubviews(backgroundView, coffeeImageView, segmentedControl)
@@ -141,10 +147,9 @@ final class DetailCoffeeViewController: UIViewController {
 
     @objc private func makeActivityViewController() {
         let activityViewController = UIActivityViewController(
-            activityItems: ["Промокод на чашку кофе"],
+            activityItems: [Constant.promocode],
             applicationActivities: nil
         )
-        activityViewController.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
         present(activityViewController, animated: true)
     }
 

@@ -5,7 +5,7 @@ import UIKit
 
 /// RoastTypeViewController
 final class RoastTypeViewController: UIViewController {
-    var textRoastTypeButton: ((String) -> Void)?
+    var textRoastTypeHandler: ((String) -> Void)?
 
     // MARK: - Private Properties
 
@@ -77,11 +77,11 @@ final class RoastTypeViewController: UIViewController {
 
     @objc private func tapTypeButton() {
         if let text = lightRoastTypeButton.titleLabel?.text {
-            textRoastTypeButton?(text)
+            textRoastTypeHandler?(text)
             dismiss(animated: true)
         }
         if let text = darkRoastTypeButton.titleLabel?.text {
-            textRoastTypeButton?(text)
+            textRoastTypeHandler?(text)
             dismiss(animated: true)
         }
     }
