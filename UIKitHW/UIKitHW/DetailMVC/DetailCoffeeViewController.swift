@@ -27,7 +27,7 @@ final class DetailCoffeeViewController: UIViewController {
     private var segmentedControlImages = [
         UIImage(named: "американо"),
         UIImage(named: "капучино"),
-        UIImage(named: "латте"),
+        UIImage(named: "латте")
     ]
     private var prices = [200, 100, 100]
 

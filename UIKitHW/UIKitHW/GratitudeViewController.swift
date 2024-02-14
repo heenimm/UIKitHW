@@ -1,15 +1,9 @@
-// GratitudeController.swift
+// GratitudeViewController.swift
 // Copyright © RoadMap. All rights reserved.
 
 import UIKit
 
-final class GratitudeController: UIViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
+final class GratitudeViewController: UIViewController {
     /*
      // MARK: - Navigation
 

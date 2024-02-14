@@ -3,54 +3,73 @@
 
 import UIKit
 
+private enum Constant {
+    static let coffeeColor = "AppCoffee"
+    static let greyColor = "AppGrey"
+    static let greenColor = "AppGreen"
+    static let totalAmount = "Цѣна - 200 руб"
+    static let yourOrdered = "Вашъ Заказъ"
+    static let centerImage = "picture"
+    static let leftImage = "left"
+    static let rightImage = "right"
+    static let cancelImage = "cancel"
+    static let payed = "Оплатить"
+    static let americano = "Американо"
+    static let milk = "Молоко"
+    static let price50 = "50 руб"
+    static let price100 = "100 руб"
+    static let espresso = "Эспрессо 50мл"
+    static let leftInset = 40
+}
+
 /// OrderViewController
 final class OrderViewController: UIViewController {
     // MARK: - Private Properties
 
-    private lazy var leftImageView: UIImageView = {
+    private let leftImageView: UIImageView = {
         let imageView = UIImageView(frame: CGRect(
             x: 20,
             y: 47,
             width: 100,
             height: 72
         ))
-        imageView.image = UIImage(named: "left")
+        imageView.image = UIImage(named: Constant.leftImage)
         return imageView
     }()
 
-    private lazy var rightImageView: UIImageView = {
+    private let rightImageView: UIImageView = {
         let imageView = UIImageView(frame: CGRect(
             x: 250,
             y: 47,
             width: 100,
             height: 72
         ))
-        imageView.image = UIImage(named: "right")
+        imageView.image = UIImage(named: Constant.rightImage)
         return imageView
     }()
 
-    private lazy var titleLabel: UILabel = {
+    private let titleLabel: UILabel = {
         let label = UILabel(frame: CGRect(
             x: 20,
             y: 80,
             width: 350,
             height: 60
         ))
-        label.text = "Вашъ Заказъ"
+        label.text = Constant.yourOrdered
         label.font = UIFont(name: "Verdana-Bold", size: 18)
         label.textAlignment = .center
         label.numberOfLines = 0
         return label
     }()
 
-    private lazy var centerImageView: UIImageView = {
+    private let centerImageView: UIImageView = {
         let imageView = UIImageView(frame: CGRect(
             x: 145,
             y: 472,
             width: 100,
             height: 40
         ))
-        imageView.image = UIImage(named: "picture")
+        imageView.image = UIImage(named: Constant.centerImage)
         return imageView
     }()
 
@@ -61,13 +80,13 @@ final class OrderViewController: UIViewController {
             width: 14,
             height: 14
         ))
-        button.setImage(UIImage(named: "cancel"), for: .normal)
+        button.setImage(UIImage(named: Constant.cancelImage), for: .normal)
         button.titleLabel?.font = .boldSystemFont(ofSize: 18)
         button.addTarget(self, action: #selector(tapCancelButton), for: .touchUpInside)
         return button
     }()
 
-    lazy var priceLabel: UILabel = {
+    private let priceLabel: UILabel = {
         let label = UILabel(frame: CGRect(
             x: 200,
             y: 669,
@@ -76,11 +95,11 @@ final class OrderViewController: UIViewController {
         ))
 
         label.font = UIFont(name: "Verdana-Bold", size: 18)
-        label.text = "Цѣна - \(calculatedPrice()) руб"
+        label.text = Constant.totalAmount
         return label
     }()
 
-    lazy var coffeeTitleLabel: UILabel = {
+    private let coffeeTitleLabel: UILabel = {
         let label = UILabel(frame: CGRect(
             x: 20,
             y: 200,
@@ -89,11 +108,11 @@ final class OrderViewController: UIViewController {
         ))
 
         label.font = UIFont(name: "Verdana-Bold", size: 18)
-        label.text = "Американо"
+        label.text = Constant.americano
         return label
     }()
 
-    lazy var milkLabel: UILabel = {
+    private let milkLabel: UILabel = {
         let label = UILabel(frame: CGRect(
             x: 20,
             y: 250,
@@ -102,11 +121,11 @@ final class OrderViewController: UIViewController {
         ))
 
         label.font = UIFont(name: "Verdana-Bold", size: 18)
-        label.text = "Молоко"
+        label.text = Constant.milk
         return label
     }()
 
-    lazy var priceIngredientLabel: UILabel = {
+    private let priceIngredientLabel: UILabel = {
         let label = UILabel(frame: CGRect(
             x: 280,
             y: 300,
@@ -114,11 +133,11 @@ final class OrderViewController: UIViewController {
             height: 50
         ))
         label.font = UIFont(name: "Verdana-Bold", size: 18)
-        label.text = "50 руб"
+        label.text = Constant.price50
         return label
     }()
 
-    lazy var priceCoffeeLabel: UILabel = {
+    private let priceCoffeeLabel: UILabel = {
         let label = UILabel(frame: CGRect(
             x: 280,
             y: 200,
@@ -126,11 +145,11 @@ final class OrderViewController: UIViewController {
             height: 50
         ))
         label.font = UIFont(name: "Verdana-Bold", size: 18)
-        label.text = "100 руб"
+        label.text = Constant.price100
         return label
     }()
 
-    lazy var priceMilkLabel: UILabel = {
+    private let priceMilkLabel: UILabel = {
         let label = UILabel(frame: CGRect(
             x: 280,
             y: 250,
@@ -139,11 +158,11 @@ final class OrderViewController: UIViewController {
         ))
 
         label.font = UIFont(name: "Verdana-Bold", size: 18)
-        label.text = "50 руб"
+        label.text = Constant.price50
         return label
     }()
 
-    lazy var ingredientLabel: UILabel = {
+    private let ingredientLabel: UILabel = {
         let label = UILabel(frame: CGRect(
             x: 20,
             y: 300,
@@ -152,11 +171,11 @@ final class OrderViewController: UIViewController {
         ))
 
         label.font = UIFont(name: "Verdana-Bold", size: 18)
-        label.text = "Эспрессо 50мл"
+        label.text = Constant.espresso
         return label
     }()
 
-    lazy var totalAmountLabel: UILabel = {
+    private let totalAmountLabel: UILabel = {
         let label = UILabel(frame: CGRect(
             x: 120,
             y: 440,
@@ -164,7 +183,7 @@ final class OrderViewController: UIViewController {
             height: 50
         ))
         label.font = UIFont(name: "Verdana-Bold", size: 18)
-        label.text = "Цѣна - 200 руб"
+        label.text = Constant.totalAmount
         return label
     }()
 
@@ -175,9 +194,9 @@ final class OrderViewController: UIViewController {
             width: 345,
             height: 53
         ))
-        button.backgroundColor = UIColor(named: "AppGreen")
+        button.backgroundColor = UIColor(named: Constant.greenColor)
         button.layer.cornerRadius = 10
-        button.setTitle("Оплатить", for: .normal)
+        button.setTitle(Constant.payed, for: .normal)
         button.titleLabel?.font = .boldSystemFont(ofSize: 18)
         button.addTarget(self, action: #selector(openGratitudeController), for: .touchUpInside)
         return button
@@ -199,16 +218,14 @@ final class OrderViewController: UIViewController {
         view.addSubviews(totalAmountLabel, buyButton)
     }
 
-    private func calculatedPrice() -> Int {
-        100
-    }
-
     @objc private func tapCancelButton() {
         dismiss(animated: true)
     }
 
     @objc private func openGratitudeController() {
         dismiss(animated: true)
-        navigationController?.pushViewController(GratitudeController(), animated: true)
+        present(GratitudeViewController(), animated: true)
+//        navigationController?.popToViewController(DetailCoffeeViewController(), animated: true)
+//        navigationController?.pushViewController(GratitudeController(), animated: true)
     }
 }
