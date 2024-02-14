@@ -122,8 +122,8 @@ final class DetailCoffeeViewController: UIViewController {
     // MARK: - Private Methods
 
     private func setupSubview() {
-        roastTypeViewController.textRoastTypeButton = { weak text in
-            self.roastTypeButton.titleLabel?.text = text
+        roastTypeViewController.textRoastTypeButton = { [weak self] text in
+            self?.roastTypeButton.titleLabel?.text = text
         }
         view.addSubviews(backgroundView, coffeeImageView, segmentedControl)
         view.addSubviews(roastTypeButton, ingredientButton, buyButton, priceLabel)
