@@ -114,7 +114,6 @@ class StartGameViewController: UIViewController {
         present(alertController, animated: true)
     }
 
-    
     private func makeAlert(
         _ title: String,
         _ message: String
@@ -170,7 +169,7 @@ class StartGameViewController: UIViewController {
         alertController.addAction(actionCancel)
         present(alertController, animated: true)
     }
-    
+
     @objc private func makeCalculateAlert() {
         let alertController = UIAlertController(
             title: "Введите ваши числа",
@@ -222,5 +221,4 @@ class StartGameViewController: UIViewController {
         alertController.addAction(actionCancel)
         present(alertController, animated: true)
     }
-
 }
