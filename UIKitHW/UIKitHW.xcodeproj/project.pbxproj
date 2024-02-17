@@ -24,6 +24,8 @@
 		7B9A025C2B7604B200DE2FCF /* UIKitHWTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9A025B2B7604B200DE2FCF /* UIKitHWTests.swift */; };
 		7B9A02662B7604B200DE2FCF /* UIKitHWUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9A02652B7604B200DE2FCF /* UIKitHWUITests.swift */; };
 		7B9A02682B7604B200DE2FCF /* UIKitHWUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9A02672B7604B200DE2FCF /* UIKitHWUITestsLaunchTests.swift */; };
+		7BB53E2A2B7D42F600A3C5E7 /* OrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB53E292B7D42F600A3C5E7 /* OrderModel.swift */; };
+		7BB53E492B7F114300A3C5E7 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB53E482B7F114300A3C5E7 /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,8 @@
 		7B9A02612B7604B200DE2FCF /* UIKitHWUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UIKitHWUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B9A02652B7604B200DE2FCF /* UIKitHWUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitHWUITests.swift; sourceTree = "<group>"; };
 		7B9A02672B7604B200DE2FCF /* UIKitHWUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitHWUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		7BB53E292B7D42F600A3C5E7 /* OrderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderModel.swift; sourceTree = "<group>"; };
+		7BB53E482B7F114300A3C5E7 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				7B993F8F2B7C2AD0008AB063 /* OrderViewController.swift */,
+				7BB53E292B7D42F600A3C5E7 /* OrderModel.swift */,
 			);
 			path = OrderMVC;
 			sourceTree = "<group>";
@@ -153,6 +158,7 @@
 		7B9A02402B7604B000DE2FCF /* UIKitHW */ = {
 			isa = PBXGroup;
 			children = (
+				7BB53E472B7F111F00A3C5E7 /* New Group */,
 				7B993F8E2B7C2AB9008AB063 /* OrderMVC */,
 				7B993F812B7B486E008AB063 /* Supporting Files */,
 				7B993F7E2B7B4630008AB063 /* Extension */,
@@ -181,6 +187,14 @@
 				7B9A02672B7604B200DE2FCF /* UIKitHWUITestsLaunchTests.swift */,
 			);
 			path = UIKitHWUITests;
+			sourceTree = "<group>";
+		};
+		7BB53E472B7F111F00A3C5E7 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				7BB53E482B7F114300A3C5E7 /* ProfileViewController.swift */,
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -363,11 +377,13 @@
 				7B993F902B7C2AD0008AB063 /* OrderViewController.swift in Sources */,
 				7B993F8D2B7C1B33008AB063 /* UIButton+Extension.swift in Sources */,
 				7B993F8B2B7BFE65008AB063 /* GrainsView.swift in Sources */,
+				7BB53E2A2B7D42F600A3C5E7 /* OrderModel.swift in Sources */,
 				7B993F802B7B464E008AB063 /* GrainsViewController.swift in Sources */,
 				7B9A02462B7604B000DE2FCF /* DetailCoffeeViewController.swift in Sources */,
 				7B9A024C2B7604B000DE2FCF /* UIKitHW.xcdatamodeld in Sources */,
 				7B9A02422B7604B000DE2FCF /* AppDelegate.swift in Sources */,
 				7B993F7A2B7B37E6008AB063 /* UIView+Extension.swift in Sources */,
+				7BB53E492B7F114300A3C5E7 /* ProfileViewController.swift in Sources */,
 				7B9A02442B7604B000DE2FCF /* SceneDelegate.swift in Sources */,
 				7B0872FD2B7C8C0800A1A6A2 /* GratitudeViewController.swift in Sources */,
 			);
