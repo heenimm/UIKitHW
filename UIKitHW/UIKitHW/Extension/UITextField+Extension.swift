@@ -5,7 +5,7 @@ import Foundation
 import UIKit
 
 extension UITextField {
-    func setDatePicker(target: Any, selector: Selector) {
+    func setDatePicker(target: Any) {
         let screenWidth = UIScreen.main.bounds.width
         let datePicker = UIDatePicker(frame: CGRect(
             x: 0,
@@ -14,8 +14,9 @@ extension UITextField {
             height: 300
         ))
         datePicker.datePickerMode = .date
+        datePicker.preferredDatePickerStyle = .inline
         inputView = datePicker
-        //        addTarget(self, action: #selector(didPickerChange(paramdatePicker:)), for: .valueChanged)
+        addTarget(self, action: #selector(didPickerChange(paramdatePicker:)), for: .touchUpInside)
         let toolbar = UIToolbar(frame: CGRect(
             x: 0,
             y: 0,
@@ -26,12 +27,12 @@ extension UITextField {
             title: "Done",
             style: .done,
             target: self,
-            action: selector
+            action: #selector(didPickerChange(paramdatePicker:))
         )
         let flexibleSpace = UIBarButtonItem(
             barButtonSystemItem: .flexibleSpace,
             target: nil,
-            action: selector
+            action: nil
         )
         let cancel = UIBarButtonItem(
             title: "Cancel",
@@ -44,9 +45,13 @@ extension UITextField {
     }
 
     @objc func didPickerChange(paramdatePicker: UIDatePicker) {
-        if paramdatePicker.isEqual(self) {
-            print(paramdatePicker.date)
+        if let datePicker = inputView as? UIDatePicker {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd MMMM yyyy"
+            dateFormatter.dateStyle = .medium
+            text = dateFormatter.string(from: datePicker.date)
         }
+        resignFirstResponder()
     }
 
     @objc private func tapToolbarCancel() {

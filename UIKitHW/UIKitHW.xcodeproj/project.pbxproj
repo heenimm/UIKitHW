@@ -25,6 +25,7 @@
 		7B9A025C2B7604B200DE2FCF /* UIKitHWTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9A025B2B7604B200DE2FCF /* UIKitHWTests.swift */; };
 		7B9A02662B7604B200DE2FCF /* UIKitHWUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9A02652B7604B200DE2FCF /* UIKitHWUITests.swift */; };
 		7B9A02682B7604B200DE2FCF /* UIKitHWUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9A02672B7604B200DE2FCF /* UIKitHWUITestsLaunchTests.swift */; };
+		7BB53E5F2B81491500A3C5E7 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB53E5E2B81491500A3C5E7 /* String+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		7B9A02612B7604B200DE2FCF /* UIKitHWUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UIKitHWUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B9A02652B7604B200DE2FCF /* UIKitHWUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitHWUITests.swift; sourceTree = "<group>"; };
 		7B9A02672B7604B200DE2FCF /* UIKitHWUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitHWUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		7BB53E5E2B81491500A3C5E7 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +157,7 @@
 		7B9A02402B7604B000DE2FCF /* UIKitHW */ = {
 			isa = PBXGroup;
 			children = (
+				7BB53E5D2B81474B00A3C5E7 /* Extension */,
 				7B7362112B7896910006E588 /* NewFriendMVC */,
 				7B73620A2B787DB60006E588 /* Supporting files */,
 				7B7362072B787BC50006E588 /* BirthdayListMVC */,
@@ -163,8 +166,6 @@
 				7B9A024D2B7604B100DE2FCF /* Assets.xcassets */,
 				7B9A02522B7604B100DE2FCF /* Info.plist */,
 				7B9A024A2B7604B000DE2FCF /* UIKitHW.xcdatamodeld */,
-				7B73620F2B78904F0006E588 /* UIView+Extension.swift */,
-				7B7362182B7932200006E588 /* UITextField+Extension.swift */,
 			);
 			path = UIKitHW;
 			sourceTree = "<group>";
@@ -184,6 +185,16 @@
 				7B9A02672B7604B200DE2FCF /* UIKitHWUITestsLaunchTests.swift */,
 			);
 			path = UIKitHWUITests;
+			sourceTree = "<group>";
+		};
+		7BB53E5D2B81474B00A3C5E7 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				7B73620F2B78904F0006E588 /* UIView+Extension.swift */,
+				7B7362182B7932200006E588 /* UITextField+Extension.swift */,
+				7BB53E5E2B81491500A3C5E7 /* String+Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -368,6 +379,7 @@
 				7B993F832B7B507A008AB063 /* SignUpModel.swift in Sources */,
 				7B7362102B78904F0006E588 /* UIView+Extension.swift in Sources */,
 				7B9A02422B7604B000DE2FCF /* AppDelegate.swift in Sources */,
+				7BB53E5F2B81491500A3C5E7 /* String+Extension.swift in Sources */,
 				7B73620C2B7880D40006E588 /* BirthdayCardView.swift in Sources */,
 				7B7362092B787C1F0006E588 /* BirthdayListViewController.swift in Sources */,
 				7B7362192B7932200006E588 /* UITextField+Extension.swift in Sources */,

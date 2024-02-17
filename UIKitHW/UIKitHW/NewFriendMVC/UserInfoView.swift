@@ -72,6 +72,7 @@ class UserInfoView: UIView {
         let pickerView = UIPickerView(frame: .zero)
         pickerView.dataSource = self
         pickerView.delegate = self
+        pickerView.accessibilityNavigationStyle = .combined
         pickerView.tag = 1
         return pickerView
     }()
@@ -151,7 +152,7 @@ class UserInfoView: UIView {
 
     override func didMoveToSuperview() {
         super.didMoveToSuperview()
-        birthdayTextField.setDatePicker(target: self, selector: #selector(selectedDate))
+        birthdayTextField.setDatePicker(target: self)
         setupSubviews()
     }
 
@@ -160,16 +161,6 @@ class UserInfoView: UIView {
     private func setupSubviews() {
         addSubviews(nameLabel, birthdayLabel, ageLabel, genderLabel, telegramLabel)
         addSubviews(nameTextField, ageTextField, birthdayTextField, genderTextField, telegramTextField)
-    }
-
-    @objc private func selectedDate() {
-        if let datePicker = birthdayTextField.inputView as? UIDatePicker {
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "dd MMMM yyyy"
-            dateFormatter.dateStyle = .medium
-            birthdayTextField.text = dateFormatter.string(from: datePicker.date)
-        }
-        birthdayTextField.resignFirstResponder()
     }
 
     @objc private func closeToolbarFromTextField() {

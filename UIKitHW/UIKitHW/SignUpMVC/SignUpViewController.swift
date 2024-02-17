@@ -7,7 +7,6 @@ import UIKit
 final class SignUpViewController: UIViewController {
     // MARK: - Private Properties
 
-    private var model = SignUpModel()
     private var isEnabledButton = false
 
     private lazy var iconImageView: UIImageView = {
@@ -71,6 +70,7 @@ final class SignUpViewController: UIViewController {
         textField.addBottomLine()
         textField.placeholder = "e-mail"
         textField.delegate = self
+        textField.keyboardType = .emailAddress
         return textField
     }()
 
@@ -195,9 +195,9 @@ final class SignUpViewController: UIViewController {
 
 extension SignUpViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if let text = emailTextField.text, textField == emailTextField {
+        if let email = emailTextField.text, email.isValidEmail {
             passwordTextField.becomeFirstResponder()
-            signInButton.isEnabled = model.isValidEmail(email: text)
+            signInButton.isEnabled = true
         } else {
             emailTextField.resignFirstResponder()
         }
