@@ -12,27 +12,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         options connectionOptions: UIScene.ConnectionOptions
     ) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
-        let window = UIWindow(windowScene: windowScene)
-        self.window = window
-        window.rootViewController = configureTabBarController()
-        window.makeKeyAndVisible()
+        setScene(scene: windowScene)
     }
 
-    private func configureTabBarController() -> UITabBarController {
-        let feedNewsViewController = FeedNewsViewController()
-        let notificationViewController = NotificationViewController()
-        let profileViewController = ProfileViewController()
-        let tabBarController = UITabBarController()
-        tabBarController.setViewControllers(
-            [
-                feedNewsViewController,
-                notificationViewController,
-                profileViewController
-            ],
-            animated: true
-        )
-        tabBarController.selectedIndex = 1
-//        tabBarController.tabBar.unselectedItemTintColor = UIColor(red: 0.7, green: 0.5, blue: 0.5, alpha: 1)
-        return tabBarController
+    private func setScene(scene: UIWindowScene) {
+        window = UIWindow(frame: scene.coordinateSpace.bounds)
+        window?.windowScene = scene
+        window?.rootViewController = MainTabBarController.configureTabBarController()
+        window?.makeKeyAndVisible()
     }
 }
