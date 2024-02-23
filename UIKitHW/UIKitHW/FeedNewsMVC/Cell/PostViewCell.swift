@@ -17,6 +17,7 @@ private enum Constants {
 ///
 final class PostViewCell: UITableViewCell {
     static let reuseID = "PostViewCell"
+    private var numberOfPage = 1
 
     // MARK: - Private Properties
 
@@ -59,8 +60,6 @@ final class PostViewCell: UITableViewCell {
 
     private let pageControl: UIPageControl = {
         let pageControl = UIPageControl()
-        pageControl.numberOfPages = 3
-        pageControl.currentPage = 0
         pageControl.hidesForSinglePage = true
         pageControl.currentPageIndicatorTintColor = .black
         return pageControl
@@ -79,6 +78,12 @@ final class PostViewCell: UITableViewCell {
         label.numberOfLines = 0
         label.attributedText = makeDescriptionLabelText()
         return label
+    }()
+
+    private let scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.isPagingEnabled = false
+        return scrollView
     }()
 
     private let postReactionView = PostReactionView()
@@ -105,6 +110,7 @@ final class PostViewCell: UITableViewCell {
         setupDescriptionLabelConstraints()
         setupCommentLabelConstraints()
         setupTimeLabelConstraints()
+        setupScrollViewConstraints()
     }
 
     // MARK: - Private Methods
@@ -113,7 +119,7 @@ final class PostViewCell: UITableViewCell {
         contentView.addSubviews(avatarImageView, postImageView, postReactionView)
         contentView.addSubviews(pageControl, nicknameLabel, moreButton)
         contentView.addSubviews(descriptionLabel, likesLabel, commentLabel, timeLabel)
-        contentView.addSubviews(smallAvatarImageView, commentLabel, timeLabel)
+        contentView.addSubviews(smallAvatarImageView, commentLabel, timeLabel, scrollView)
     }
 
     private func makeIconLabel(text: String) -> UILabel {
@@ -193,7 +199,7 @@ final class PostViewCell: UITableViewCell {
             postImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             postImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             postImageView.topAnchor.constraint(equalTo: avatarImageView.bottomAnchor, constant: 10),
-            postImageView.heightAnchor.constraint(equalToConstant: 239),
+            postImageView.heightAnchor.constraint(equalToConstant: 239)
         ])
     }
 
@@ -201,7 +207,7 @@ final class PostViewCell: UITableViewCell {
         pageControl.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             pageControl.topAnchor.constraint(equalTo: postImageView.bottomAnchor, constant: 10),
-            pageControl.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+            pageControl.centerXAnchor.constraint(equalTo: contentView.centerXAnchor)
         ])
     }
 
@@ -211,7 +217,7 @@ final class PostViewCell: UITableViewCell {
             likesLabel.topAnchor.constraint(equalTo: postReactionView.bottomAnchor),
             likesLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 12),
             likesLabel.heightAnchor.constraint(equalToConstant: 15),
-            likesLabel.widthAnchor.constraint(equalToConstant: 107),
+            likesLabel.widthAnchor.constraint(equalToConstant: 107)
         ])
     }
 
@@ -251,15 +257,40 @@ final class PostViewCell: UITableViewCell {
         timeLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             timeLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 13),
-            timeLabel.topAnchor.constraint(equalTo: smallAvatarImageView.bottomAnchor, constant: 5),
+            timeLabel.topAnchor.constraint(equalTo: smallAvatarImageView.bottomAnchor, constant: 5)
+        ])
+    }
+
+    private func setupScrollViewConstraints() {
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            scrollView.topAnchor.constraint(equalTo: avatarImageView.bottomAnchor, constant: 10),
+            scrollView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            scrollView.heightAnchor.constraint(equalToConstant: 239)
         ])
     }
 }
 
+// MARK: - Extension
+
 extension PostViewCell {
     func configureCell(_ post: Post) {
+        numberOfPage = post.imageNames.count
+        scrollView.contentSize = CGSize(width: postImageView.bounds.size.width * CGFloat(numberOfPage), height: 239)
+        scrollView.delegate = self
+        post.imageNames.forEach { scrollView.addSubview(UIImageView(image: UIImage(named: $0))) }
+        pageControl.numberOfPages = post.imageNames.count
         for imageName in post.imageNames {
             postImageView.image = UIImage(named: imageName)
         }
+    }
+}
+
+// MARK: - Extension PostViewCell + UIScrollViewDelegate
+
+extension PostViewCell: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        pageControl.currentPage = Int(scrollView.contentOffset.x / UIScreen.main.bounds.width)
     }
 }
