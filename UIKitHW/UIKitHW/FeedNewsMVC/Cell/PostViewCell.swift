@@ -16,10 +16,16 @@ private enum Constants {
 
 ///
 final class PostViewCell: UITableViewCell {
+    // MARK: - Static Constants
+
     static let reuseID = "PostViewCell"
-    private var numberOfPage = 1
 
     // MARK: - Private Properties
+
+    private var numberOfPage = 1
+    private var post: Post?
+
+    // MARK: - Visual Components
 
     private let avatarImageView: UIImageView = {
         let imageView = UIImageView()
@@ -91,11 +97,7 @@ final class PostViewCell: UITableViewCell {
     private lazy var commentLabel = makeIconLabel(text: "Комментировать...")
     private lazy var timeLabel = makeIconLabel(text: "30 минут назад")
 
-    // MARK: - Private Properties
-
-    private var post: Post?
-
-    // MARK: - Initializers
+    // MARK: - Life Cycle
 
     override func didMoveToSuperview() {
         setupSubviews()

@@ -18,6 +18,7 @@ final class MainTabBarController: UITabBarController {
         let feedNewsViewNavigationController = UINavigationController(rootViewController: feedNewsViewController)
         let notificationViewController = NotificationViewController()
         let profileViewController = ProfileViewController()
+        let profileViewNavigationController = UINavigationController(rootViewController: profileViewController)
 
         feedNewsViewNavigationController.tabBarItem = UITabBarItem(
             title: Constants.titleFeedNews,
@@ -39,7 +40,7 @@ final class MainTabBarController: UITabBarController {
             [
                 feedNewsViewNavigationController,
                 notificationViewController,
-                profileViewController
+                profileViewNavigationController
             ],
             animated: true
         )

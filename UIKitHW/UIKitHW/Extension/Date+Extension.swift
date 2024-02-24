@@ -1,12 +1,6 @@
 // Date+Extension.swift
 // Copyright © RoadMap. All rights reserved.
 
-//
-//  Date+Extension.swift
-//  UIKitHW
-//
-//  Created by Халимка on 21.02.2024.
-//
 import Foundation
 
 /// Форматирует дату в строку

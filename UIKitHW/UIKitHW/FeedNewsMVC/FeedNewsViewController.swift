@@ -14,12 +14,14 @@ private enum Constants {
 
 /// Данный класс отвечает за отображение новостной ленты
 final class FeedNewsViewController: UIViewController {
+    // MARK: - Private Properties
+
     private let contentTypes: [ContentType] = [.stories, .firstPost, .recommendations, .posts]
     private let storageStory = StorageStory()
     private let storagePost = StoragePost()
     private let storageRecommended = StorageRecommended()
 
-    // MARK: - Private Properties
+    // MARK: - Visual Components
 
     private lazy var tableView: UITableView = {
         let tableView = UITableView()

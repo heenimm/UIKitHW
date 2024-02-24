@@ -16,11 +16,14 @@ final class StoryViewCell: UITableViewCell {
     // MARK: - Static Constants
 
     static let reuseID = String(describing: StoryViewCell.self)
-    private var stories: [Story] = []
 
     // MARK: - Private Properties
 
-    private lazy var storyScrollView: UIScrollView = {
+    private var stories: [Story] = []
+
+    // MARK: - Visual Components
+
+    private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.isPagingEnabled = true
@@ -39,42 +42,42 @@ final class StoryViewCell: UITableViewCell {
     // MARK: - Private Methods
 
     private func setupSubviews() {
-        contentView.addSubview(storyScrollView)
+        contentView.addSubview(scrollView)
     }
 
     private func setupStoryConstraints(_ storyView: StoryView, index: Int) {
         storyView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             storyView.leadingAnchor.constraint(
-                equalTo: storyScrollView.leadingAnchor,
+                equalTo: scrollView.leadingAnchor,
                 constant: CGFloat(80 * index)
             ),
-            storyView.topAnchor.constraint(equalTo: storyScrollView.topAnchor),
-            storyView.bottomAnchor.constraint(equalTo: storyScrollView.bottomAnchor),
+            storyView.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            storyView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
             storyView.heightAnchor.constraint(equalToConstant: 80),
             storyView.widthAnchor.constraint(equalToConstant: 80)
         ])
 
         if index == stories.count - 1 {
             NSLayoutConstraint.activate([
-                storyView.trailingAnchor.constraint(equalTo: storyScrollView.trailingAnchor)
+                storyView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor)
             ])
         }
         if index == 0 {
             NSLayoutConstraint.activate([
-                storyView.leadingAnchor.constraint(equalTo: storyScrollView.leadingAnchor)
+                storyView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor)
             ])
         }
     }
 
     private func setupConstraints() {
-        storyScrollView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
-            storyScrollView.topAnchor.constraint(equalTo: contentView.topAnchor),
-            storyScrollView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-            storyScrollView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            storyScrollView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
+            scrollView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            scrollView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
         ])
     }
 }
@@ -91,8 +94,8 @@ extension StoryViewCell {
             if index == 0 {
                 storyView.plusButton.isHidden = false
             }
-            storyScrollView.contentSize = storyView.bounds.size
-            storyScrollView.addSubview(storyView)
+            scrollView.contentSize = storyView.bounds.size
+            scrollView.addSubview(storyView)
 
             setupStoryConstraints(storyView, index: index)
             if !story.isViewed {

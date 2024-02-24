@@ -4,11 +4,9 @@
 import UIKit
 
 private enum Constants {
-    static let imageSize: CGFloat = 60
-    static let plusButtonSize: CGFloat = 20
     static let defaultText = "Ваша история"
     static let fontVerdana = "Verdana"
-    static let plusBackgroundColor = "plusBackground"
+    static let plusBackgroundColor = "AppPlusBackground"
 }
 
 /// Данный класс отрисовывает каждую вью в ленте
@@ -80,7 +78,7 @@ private extension StoryView {
 
             plusButton.trailingAnchor.constraint(equalTo: userImageView.trailingAnchor),
             plusButton.bottomAnchor.constraint(equalTo: userImageView.bottomAnchor),
-            plusButton.heightAnchor.constraint(equalToConstant: Constants.plusButtonSize),
+            plusButton.heightAnchor.constraint(equalToConstant: 20),
             plusButton.widthAnchor.constraint(equalTo: plusButton.heightAnchor)
 
         ])

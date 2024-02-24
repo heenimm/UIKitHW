@@ -12,9 +12,13 @@ private enum Constants {
 
 ///
 final class RecommendViewCell: UITableViewCell {
+    // MARK: - Static Constants
+
     static let reuseID = "RecommendViewCell"
     private var recommends: [Recommended] = []
     private var recommendViews: [RecommendView] = []
+
+    // MARK: - Visual Components
 
     private let titleLabel: UILabel = {
         let label = UILabel()
@@ -41,12 +45,16 @@ final class RecommendViewCell: UITableViewCell {
         return scrollView
     }()
 
+    // MARK: - Life Cycle
+
     override func didMoveToSuperview() {
         setupSubviews()
         setupScrollViewConstrains()
         setupTitleLabelConstrains()
         setupAllLabelConstrains()
     }
+
+    // MARK: - Private Methods
 
     private func setupSubviews() {
         backgroundColor = UIColor(named: "AppGrey")

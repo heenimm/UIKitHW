@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "secondScreenImage.pdf",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

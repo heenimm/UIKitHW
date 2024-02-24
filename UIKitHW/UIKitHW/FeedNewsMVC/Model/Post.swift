@@ -14,7 +14,7 @@ struct StoragePost {
         Post(
             avatarImageName: "womanOnBeach",
             nickName: "mouse",
-            imageNames: ["mountain", "castle", "canyon"],
+            imageNames: ["castle", "mountain", "castle", "canyon"],
             title: "",
             timeStamp: ""
         ),
