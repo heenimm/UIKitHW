@@ -8,9 +8,8 @@ private enum Constants {
     static let xmark = "xmark"
 }
 
-///Отображаем детально каждый элемент сторис пользователя
+/// Отображаем детально каждый элемент сторис пользователя
 final class DetailScreenViewController: UIViewController {
-    
     // MARK: - Visual Components
 
     private var timer = Timer()

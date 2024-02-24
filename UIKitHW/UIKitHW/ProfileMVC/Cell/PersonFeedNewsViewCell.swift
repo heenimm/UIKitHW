@@ -3,7 +3,7 @@
 
 import UIKit
 
-///Позволяет открыть окно с изображением
+/// Позволяет открыть окно с изображением
 protocol PersonFeedNewsViewCellDelegate: AnyObject {
     func openDetailScreen()
 }

@@ -4,9 +4,8 @@
 import UIKit
 import WebKit
 
-///по ссылке открывается окно браузера в нашем модальном представлении
+/// по ссылке открывается окно браузера в нашем модальном представлении
 final class WebPageViewController: UIViewController {
-    
     // MARK: - Life Cycle
 
     override func viewDidLoad() {

@@ -17,7 +17,7 @@ private enum Constants {
     static let addPersonImage = "addPerson"
 }
 
-///Позволяет открыть окно веббраузера
+/// Позволяет открыть окно веббраузера
 protocol HeaderViewCellDelegate: AnyObject {
     func openWebPageScreen()
 }
