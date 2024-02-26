@@ -15,7 +15,7 @@ final class VFLViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSubview()
-        setupBlackViewConstraint()
+//        setupBlackViewConstraint()
         setupYellowViewConstraint()
     }
 
@@ -94,24 +94,24 @@ final class VFLViewController: UIViewController {
             metrics: nil,
             views: viewVFL
         ))
-        let h = view.addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat: "H:|[yellowView(115)]|",
-            options: [],
-            metrics: nil,
-            views: viewVFL
-        ))
-        view.addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat: "H:|[greenView(115)]|",
-            options: [],
-            metrics: nil,
-            views: viewVFL
-        ))
-        view.addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat: "V:|[greenView]-[yellowView]-[greenView]|",
-            options: [],
-            metrics: nil,
-            views: viewVFL
-        ))
-        NSLayoutConstraint.activate([h, v])
+//        let h = view.addConstraints(NSLayoutConstraint.constraints(
+//            withVisualFormat: "H:|[yellowView(115)]|",
+//            options: [],
+//            metrics: nil,
+//            views: viewVFL
+//        ))
+//        view.addConstraints(NSLayoutConstraint.constraints(
+//            withVisualFormat: "H:|[greenView(115)]|",
+//            options: [],
+//            metrics: nil,
+//            views: viewVFL
+//        ))
+//        view.addConstraints(NSLayoutConstraint.constraints(
+//            withVisualFormat: "V:|[greenView]-[yellowView]-[greenView]|",
+//            options: [],
+//            metrics: nil,
+//            views: viewVFL
+//        ))
+//        NSLayoutConstraint.activate([h, v])
     }
 }
