@@ -87,13 +87,12 @@ final class VFLViewController: UIViewController {
         yellowView.translatesAutoresizingMaskIntoConstraints = false
         greenView.translatesAutoresizingMaskIntoConstraints = false
 
-       
-        let v = view.addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat: "H:|[redView(115)]|",
-            options: [],
-            metrics: nil,
-            views: viewVFL
-        ))
+//        let v = view.addConstraints(NSLayoutConstraint.constraints(
+//            withVisualFormat: "H:|[redView(115)]|",
+//            options: [],
+//            metrics: nil,
+//            views: viewVFL
+//        ))
 //        let h = view.addConstraints(NSLayoutConstraint.constraints(
 //            withVisualFormat: "H:|[yellowView(115)]|",
 //            options: [],
