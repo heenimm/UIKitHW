@@ -10,6 +10,7 @@
 		7B42E4982B8B0A110095C019 /* StackViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B42E4972B8B0A110095C019 /* StackViewViewController.swift */; };
 		7B42E49A2B8BE5300095C019 /* VFLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B42E4992B8BE5300095C019 /* VFLViewController.swift */; };
 		7B42E49C2B8BE53B0095C019 /* NSLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B42E49B2B8BE53B0095C019 /* NSLayoutViewController.swift */; };
+		7B42E49E2B8C60280095C019 /* AnchorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B42E49D2B8C60280095C019 /* AnchorViewController.swift */; };
 		7B9A02422B7604B000DE2FCF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9A02412B7604B000DE2FCF /* AppDelegate.swift */; };
 		7B9A02442B7604B000DE2FCF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9A02432B7604B000DE2FCF /* SceneDelegate.swift */; };
 		7B9A02462B7604B000DE2FCF /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9A02452B7604B000DE2FCF /* MenuViewController.swift */; };
@@ -44,6 +45,7 @@
 		7B42E4972B8B0A110095C019 /* StackViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackViewViewController.swift; sourceTree = "<group>"; };
 		7B42E4992B8BE5300095C019 /* VFLViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VFLViewController.swift; sourceTree = "<group>"; };
 		7B42E49B2B8BE53B0095C019 /* NSLayoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLayoutViewController.swift; sourceTree = "<group>"; };
+		7B42E49D2B8C60280095C019 /* AnchorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnchorViewController.swift; sourceTree = "<group>"; };
 		7B9A023E2B7604B000DE2FCF /* UIKitHW.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitHW.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B9A02412B7604B000DE2FCF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7B9A02432B7604B000DE2FCF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				7B9A02412B7604B000DE2FCF /* AppDelegate.swift */,
 				7B9A02432B7604B000DE2FCF /* SceneDelegate.swift */,
 				7B42E4972B8B0A110095C019 /* StackViewViewController.swift */,
+				7B42E49D2B8C60280095C019 /* AnchorViewController.swift */,
 				7B9A02452B7604B000DE2FCF /* MenuViewController.swift */,
 				7B9A02472B7604B000DE2FCF /* Main.storyboard */,
 				7BF1ECC22B8A61F8008CE4EE /* ConstraintTrafficLightViewController.swift */,
@@ -321,6 +324,7 @@
 				7B9A02462B7604B000DE2FCF /* MenuViewController.swift in Sources */,
 				7B9A024C2B7604B000DE2FCF /* UIKitHW.xcdatamodeld in Sources */,
 				7BF1ECC32B8A61F8008CE4EE /* ConstraintTrafficLightViewController.swift in Sources */,
+				7B42E49E2B8C60280095C019 /* AnchorViewController.swift in Sources */,
 				7B42E49A2B8BE5300095C019 /* VFLViewController.swift in Sources */,
 				7B9A02422B7604B000DE2FCF /* AppDelegate.swift in Sources */,
 				7B42E49C2B8BE53B0095C019 /* NSLayoutViewController.swift in Sources */,

@@ -4,81 +4,215 @@
 import UIKit
 
 private enum Constants {
-    static let halfSize: CGFloat = 2
+    static let halfSize: CGFloat = 0.5
+    static let percentOfSize: CGFloat = 0.2
 }
 
-///
+/// верстаем с помощью языка VFL
 final class VFLViewController: UIViewController {
     // MARK: - Life Cycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSubview()
+        setupBlackViewConstraint()
+        setupYellowViewConstraint()
+        setupRedViewConstraint()
+        setupGreenViewConstraint()
     }
-
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        yellowView.layer.cornerRadius = (view.bounds.height * Constants.percentOfSize) * Constants.halfSize
+        redView.layer.cornerRadius = (view.bounds.height * Constants.percentOfSize) * Constants.halfSize
+        greenView.layer.cornerRadius = (view.bounds.height * Constants.percentOfSize) * Constants.halfSize
+    }
+    
     // MARK: - Visual Components
-
-    private lazy var stackView: UIStackView = {
-        let stackView = UIStackView(frame: CGRect(
-            x: view.bounds.width / 2,
-            y: 100,
-            width: view.bounds.width / 2,
-            height: view.bounds.height / 2
-        ))
-        stackView.axis = .vertical
-        stackView.distribution = .fillEqually
-        stackView.backgroundColor = .black
-        stackView.alignment = .center
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        return stackView
+    
+    private lazy var blackView: UIView = {
+        let blackView = UIView()
+        blackView.backgroundColor = .black
+        return blackView
     }()
-
-    private let redView: UIView = {
-        let view = UIView(frame: CGRect(
-            x: 20,
-            y: 20,
-            width: 115,
-            height: 115
-        ))
-        view.backgroundColor = .red
-        view.layer.cornerRadius = view.bounds.width / Constants.halfSize
-        view.clipsToBounds = true
-        return view
+    
+    private lazy var redView: UIView = {
+        let redView = UIView()
+        redView.backgroundColor = .red
+        redView.layer.cornerRadius = (view.bounds.height * Constants.percentOfSize) * Constants.halfSize
+        redView.clipsToBounds = true
+        return redView
     }()
-
-    private let yellowView: UIView = {
-        let view = UIView(frame: CGRect(
-            x: 20,
-            y: 145,
-            width: 115,
-            height: 115
-        ))
-        view.backgroundColor = .yellow
-        view.layer.cornerRadius = 50
-        view.clipsToBounds = true
-        return view
+    
+    private lazy var yellowView: UIView = {
+        let yellowView = UIView()
+        yellowView.backgroundColor = .yellow
+        yellowView.layer.cornerRadius = (view.bounds.height * Constants.percentOfSize) * Constants.halfSize
+        yellowView.clipsToBounds = true
+        return yellowView
     }()
-
-    private let greenView: UIView = {
-        let view = UIView(frame: CGRect(
-            x: 20,
-            y: 275,
-            width: 115,
-            height: 115
-        ))
-        view.backgroundColor = .green
-        view.layer.cornerRadius = 50
-        view.clipsToBounds = true
-        return view
+    
+    private lazy var greenView: UIView = {
+        let greenView = UIView()
+        greenView.backgroundColor = .green
+        greenView.layer.cornerRadius = (view.bounds.height * Constants.percentOfSize) * Constants.halfSize
+        greenView.clipsToBounds = true
+        return greenView
     }()
-
+    
     // MARK: - Private Methods
-
+    
     private func setupSubview() {
         view.backgroundColor = .white
-        view.addSubview(stackView)
-        stackView.addSubview(redView)
-        stackView.addSubview(yellowView)
-        stackView.addSubview(greenView)
+        view.addSubview(blackView)
+        blackView.addSubview(redView)
+        blackView.addSubview(yellowView)
+        blackView.addSubview(greenView)
+    }
+    
+    private func setupBlackViewConstraint() {
+        blackView.translatesAutoresizingMaskIntoConstraints = false
+        blackView.topAnchor.constraint(equalTo: redView.topAnchor, constant: -20).isActive = true
+        blackView.bottomAnchor.constraint(equalTo: greenView.bottomAnchor, constant: 20).isActive = true
+        blackView.leadingAnchor.constraint(equalTo: yellowView.leadingAnchor, constant: -20).isActive = true
+        blackView.trailingAnchor.constraint(equalTo: yellowView.trailingAnchor, constant: 20).isActive = true
+    }
+    
+    private func setupYellowViewConstraint() {
+        let viewVFL = [
+            "blackView": blackView,
+            "redView": redView,
+            "yellowView": yellowView,
+            "greenView": greenView
+        ]
+        yellowView.translatesAutoresizingMaskIntoConstraints = false
+        
+        view.addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: <#T##String#>,
+            options: <#T##NSLayoutConstraint.FormatOptions#>,
+            metrics: <#T##[String : Any]?#>,
+            views: <#T##[String : Any]#>))
+        NSLayoutConstraint.activate([
+            NSLayoutConstraint(
+                item: yellowView,
+                attribute: .centerX,
+                relatedBy: .equal,
+                toItem: view,
+                attribute: .centerX,
+                multiplier: 1.0,
+                constant: 0.0
+            ),
+            NSLayoutConstraint(
+                item: yellowView,
+                attribute: .centerY,
+                relatedBy: .equal,
+                toItem: view,
+                attribute: .centerY,
+                multiplier: 1.0,
+                constant: 0.0
+            ),
+            NSLayoutConstraint(
+                item: yellowView,
+                attribute: .height,
+                relatedBy: .equal,
+                toItem: view,
+                attribute: .height,
+                multiplier: 0.2,
+                constant: 0.0
+            ),
+            NSLayoutConstraint(
+                item: yellowView,
+                attribute: .width,
+                relatedBy: .equal,
+                toItem: yellowView,
+                attribute: .height,
+                multiplier: 1.0,
+                constant: 0.0
+            )
+        ])
+    }
+    
+    private func setupRedViewConstraint() {
+        redView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            NSLayoutConstraint(
+                item: redView,
+                attribute: .bottom,
+                relatedBy: .equal,
+                toItem: yellowView,
+                attribute: .top,
+                multiplier: 1.0,
+                constant: -20
+            ),
+            NSLayoutConstraint(
+                item: redView,
+                attribute: .centerX,
+                relatedBy: .equal,
+                toItem: view,
+                attribute: .centerX,
+                multiplier: 1.0,
+                constant: 0.0
+            ),
+            NSLayoutConstraint(
+                item: redView,
+                attribute: .height,
+                relatedBy: .equal,
+                toItem: view,
+                attribute: .height,
+                multiplier: 0.2,
+                constant: 0.0
+            ),
+            NSLayoutConstraint(
+                item: redView,
+                attribute: .width,
+                relatedBy: .equal,
+                toItem: redView,
+                attribute: .height,
+                multiplier: 1.0,
+                constant: 0.0
+            )
+        ])
+    }
+    
+    private func setupGreenViewConstraint() {
+        greenView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            NSLayoutConstraint(
+                item: greenView,
+                attribute: .centerX,
+                relatedBy: .equal,
+                toItem: view,
+                attribute: .centerX,
+                multiplier: 1.0,
+                constant: 0.0
+            ),
+            NSLayoutConstraint(
+                item: greenView,
+                attribute: .top,
+                relatedBy: .equal,
+                toItem: yellowView,
+                attribute: .bottom,
+                multiplier: 1.0,
+                constant: 20
+            ),
+            NSLayoutConstraint(
+                item: greenView,
+                attribute: .height,
+                relatedBy: .equal,
+                toItem: view,
+                attribute: .height,
+                multiplier: 0.2,
+                constant: 0.0
+            ),
+            NSLayoutConstraint(
+                item: greenView,
+                attribute: .width,
+                relatedBy: .equal,
+                toItem: greenView,
+                attribute: .height,
+                multiplier: 1.0,
+                constant: 0.0
+            )
+        ])
     }
 }

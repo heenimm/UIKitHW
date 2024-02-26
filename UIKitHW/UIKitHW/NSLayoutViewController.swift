@@ -8,17 +8,17 @@ private enum Constants {
     static let percentOfSize: CGFloat = 0.2
 }
 
-///
+/// верстаем светофор констрейнтами
 final class NSLayoutViewController: UIViewController {
     // MARK: - Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSubview()
-        setupblackConstraint()
-        setupyellowConstraint()
-        setupredConstraint()
-        setupgreenConstraint()
+        setupBlackViewConstraint()
+        setupYellowViewConstraint()
+        setupRedViewConstraint()
+        setupGreenViewConstraint()
     }
 
     override func viewDidLayoutSubviews() {
@@ -70,7 +70,7 @@ final class NSLayoutViewController: UIViewController {
         blackView.addSubview(greenView)
     }
 
-    private func setupblackConstraint() {
+    private func setupBlackViewConstraint() {
         blackView.translatesAutoresizingMaskIntoConstraints = false
         blackView.topAnchor.constraint(equalTo: redView.topAnchor, constant: -20).isActive = true
         blackView.bottomAnchor.constraint(equalTo: greenView.bottomAnchor, constant: 20).isActive = true
@@ -78,32 +78,130 @@ final class NSLayoutViewController: UIViewController {
         blackView.trailingAnchor.constraint(equalTo: yellowView.trailingAnchor, constant: 20).isActive = true
     }
 
-    private func setupyellowConstraint() {
+    private func setupYellowViewConstraint() {
         yellowView.translatesAutoresizingMaskIntoConstraints = false
 
-        yellowView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        yellowView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        yellowView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.2).isActive = true
-        yellowView.widthAnchor.constraint(equalTo: yellowView.heightAnchor).isActive = true
+        NSLayoutConstraint.activate([
+            NSLayoutConstraint(
+                item: yellowView,
+                attribute: .centerX,
+                relatedBy: .equal,
+                toItem: view,
+                attribute: .centerX,
+                multiplier: 1.0,
+                constant: 0.0
+            ),
+            NSLayoutConstraint(
+                item: yellowView,
+                attribute: .centerY,
+                relatedBy: .equal,
+                toItem: view,
+                attribute: .centerY,
+                multiplier: 1.0,
+                constant: 0.0
+            ),
+            NSLayoutConstraint(
+                item: yellowView,
+                attribute: .height,
+                relatedBy: .equal,
+                toItem: view,
+                attribute: .height,
+                multiplier: 0.2,
+                constant: 0.0
+            ),
+            NSLayoutConstraint(
+                item: yellowView,
+                attribute: .width,
+                relatedBy: .equal,
+                toItem: yellowView,
+                attribute: .height,
+                multiplier: 1.0,
+                constant: 0.0
+            )
+        ])
     }
 
-    private func setupredConstraint() {
+    private func setupRedViewConstraint() {
         redView.translatesAutoresizingMaskIntoConstraints = false
-
-        redView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-
-        redView.bottomAnchor.constraint(equalTo: yellowView.topAnchor, constant: -15).isActive = true
-        redView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.2).isActive = true
-        redView.widthAnchor.constraint(equalTo: redView.heightAnchor).isActive = true
+        NSLayoutConstraint.activate([
+            NSLayoutConstraint(
+                item: redView,
+                attribute: .bottom,
+                relatedBy: .equal,
+                toItem: yellowView,
+                attribute: .top,
+                multiplier: 1.0,
+                constant: -20
+            ),
+            NSLayoutConstraint(
+                item: redView,
+                attribute: .centerX,
+                relatedBy: .equal,
+                toItem: view,
+                attribute: .centerX,
+                multiplier: 1.0,
+                constant: 0.0
+            ),
+            NSLayoutConstraint(
+                item: redView,
+                attribute: .height,
+                relatedBy: .equal,
+                toItem: view,
+                attribute: .height,
+                multiplier: 0.2,
+                constant: 0.0
+            ),
+            NSLayoutConstraint(
+                item: redView,
+                attribute: .width,
+                relatedBy: .equal,
+                toItem: redView,
+                attribute: .height,
+                multiplier: 1.0,
+                constant: 0.0
+            )
+        ])
     }
 
-    private func setupgreenConstraint() {
+    private func setupGreenViewConstraint() {
         greenView.translatesAutoresizingMaskIntoConstraints = false
-
-        greenView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-
-        greenView.topAnchor.constraint(equalTo: yellowView.bottomAnchor, constant: 15).isActive = true
-        greenView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.2).isActive = true
-        greenView.widthAnchor.constraint(equalTo: greenView.heightAnchor).isActive = true
+        NSLayoutConstraint.activate([
+            NSLayoutConstraint(
+                item: greenView,
+                attribute: .centerX,
+                relatedBy: .equal,
+                toItem: view,
+                attribute: .centerX,
+                multiplier: 1.0,
+                constant: 0.0
+            ),
+            NSLayoutConstraint(
+                item: greenView,
+                attribute: .top,
+                relatedBy: .equal,
+                toItem: yellowView,
+                attribute: .bottom,
+                multiplier: 1.0,
+                constant: 20
+            ),
+            NSLayoutConstraint(
+                item: greenView,
+                attribute: .height,
+                relatedBy: .equal,
+                toItem: view,
+                attribute: .height,
+                multiplier: 0.2,
+                constant: 0.0
+            ),
+            NSLayoutConstraint(
+                item: greenView,
+                attribute: .width,
+                relatedBy: .equal,
+                toItem: greenView,
+                attribute: .height,
+                multiplier: 1.0,
+                constant: 0.0
+            )
+        ])
     }
 }

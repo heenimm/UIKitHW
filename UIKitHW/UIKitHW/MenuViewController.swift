@@ -16,16 +16,17 @@ final class MenuViewController: UIViewController {
 
     @IBAction func openStackViewTrafficLightVC(_ sender: UIButton) {
         present(StackViewViewController(), animated: true)
-        //        performSegue(withIdentifier: Constants.stackViewSegue, sender: nil)
     }
 
     @IBAction func openNSLayoutAnchorTrafficLightVC(_ sender: Any) {
-        present(NSLayoutViewController(), animated: true)
+        present(AnchorViewController(), animated: true)
     }
 
     @IBAction func openNSLayoutConstraintTrafficLightVC(_ sender: Any) {
         present(NSLayoutViewController(), animated: true)
     }
 
-    @IBAction func openVFLTrafficLightVC(_ sender: Any) {}
+    @IBAction func openVFLTrafficLightVC(_ sender: Any) {
+        present(VFLViewController(), animated: true)
+    }
 }

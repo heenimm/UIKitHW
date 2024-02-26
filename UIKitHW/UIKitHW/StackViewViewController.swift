@@ -19,6 +19,25 @@ final class StackViewViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         setupSubview()
+        stackView.center = view.center
+    }
+
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+
+        if UIDevice.current.orientation.isLandscape {
+            // Уменьшаем размер представлений светофора на 20% в ландшафтном режиме
+            stackView.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
+            redView.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
+            yellowView.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
+            greenView.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
+        } else {
+            // Возвращаем исходный размер представлений светофора в портретном режиме
+            stackView.transform = .identity
+            redView.transform = .identity
+            yellowView.transform = .identity
+            greenView.transform = .identity
+        }
     }
 
     // MARK: - Visual Components
@@ -26,9 +45,9 @@ final class StackViewViewController: UIViewController {
     private lazy var stackView: UIStackView = {
         let stackView = UIStackView(
             frame: CGRect(
-                x: view.bounds.width / 2 - 75,
-                y: 30,
-                width: 150,
+                x: 0,
+                y: 0,
+                width: 160,
                 height: 410
             )
         )
@@ -40,7 +59,7 @@ final class StackViewViewController: UIViewController {
         return stackView
     }()
 
-    private let redView: UIView = {
+    private lazy var redView: UIView = {
         let view = UIView(frame: CGRect(
             x: 20,
             y: 20,
@@ -53,7 +72,7 @@ final class StackViewViewController: UIViewController {
         return view
     }()
 
-    private let yellowView: UIView = {
+    private lazy var yellowView: UIView = {
         let view = UIView(frame: CGRect(
             x: 20,
             y: 145,
@@ -66,7 +85,7 @@ final class StackViewViewController: UIViewController {
         return view
     }()
 
-    private let greenView: UIView = {
+    private lazy var greenView: UIView = {
         let view = UIView(frame: CGRect(
             x: 20,
             y: 275,
