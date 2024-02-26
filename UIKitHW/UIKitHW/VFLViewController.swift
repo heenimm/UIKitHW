@@ -1,4 +1,4 @@
-// StackViewViewController.swift
+// VFLViewController.swift
 // Copyright © RoadMap. All rights reserved.
 
 import UIKit
@@ -8,7 +8,7 @@ private enum Constants {
 }
 
 ///
-final class StackViewViewController: UIViewController {
+final class VFLViewController: UIViewController {
     // MARK: - Life Cycle
 
     override func viewDidLoad() {
@@ -16,27 +16,20 @@ final class StackViewViewController: UIViewController {
         setupSubview()
     }
 
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        setupSubview()
-    }
-
     // MARK: - Visual Components
 
     private lazy var stackView: UIStackView = {
-        let stackView = UIStackView(
-            frame: CGRect(
-                x: view.bounds.width / 2 - 75,
-                y: 30,
-                width: 150,
-                height: 410
-            )
-        )
+        let stackView = UIStackView(frame: CGRect(
+            x: view.bounds.width / 2,
+            y: 100,
+            width: view.bounds.width / 2,
+            height: view.bounds.height / 2
+        ))
         stackView.axis = .vertical
-        stackView.distribution = .fillProportionally
+        stackView.distribution = .fillEqually
         stackView.backgroundColor = .black
         stackView.alignment = .center
-        stackView.isBaselineRelativeArrangement = true
+        stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
 

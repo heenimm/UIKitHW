@@ -3,7 +3,7 @@
 
 import UIKit
 
-enum Constants {
+private enum Constants {
     static let constraintSegue = "constraintVC"
     static let stackViewSegue = "stackViewVC"
 }
@@ -15,12 +15,17 @@ final class MenuViewController: UIViewController {
     }
 
     @IBAction func openStackViewTrafficLightVC(_ sender: UIButton) {
-        performSegue(withIdentifier: Constants.stackViewSegue, sender: nil)
+        present(StackViewViewController(), animated: true)
+        //        performSegue(withIdentifier: Constants.stackViewSegue, sender: nil)
     }
 
-    @IBAction func openNSLayoutAnchorTrafficLightVC(_ sender: Any) {}
+    @IBAction func openNSLayoutAnchorTrafficLightVC(_ sender: Any) {
+        present(NSLayoutViewController(), animated: true)
+    }
 
-    @IBAction func openNSLayoutConstraintTrafficLightVC(_ sender: Any) {}
+    @IBAction func openNSLayoutConstraintTrafficLightVC(_ sender: Any) {
+        present(NSLayoutViewController(), animated: true)
+    }
 
     @IBAction func openVFLTrafficLightVC(_ sender: Any) {}
 }
