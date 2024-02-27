@@ -3,4 +3,14 @@
 
 import UIKit
 
-class ViewController: UIViewController {}
+class ViewController: UIViewController {
+    override func viewDidLoad() {
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = view.frame
+        gradientLayer.colors = [
+            UIColor.systemPink.cgColor,
+            UIColor.systemOrange.cgColor
+        ]
+        view.layer.addSublayer(gradientLayer)
+    }
+}
